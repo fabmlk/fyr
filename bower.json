@@ -1,0 +1,24 @@
+{
+  "name": "FyR",
+  "version": "0.0.0",
+  "homepage": "https://github.com/fabmlk/fyr",
+  "authors": [
+    "fabmlk <fabmlk@hotmail.com>"
+  ],
+  "description": "voir package.json description",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.11",
+    "jquery-mobile-bower": "~1.4.2",
+    "domready": "~1.0.5"
+  }
+}
