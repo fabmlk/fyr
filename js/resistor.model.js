@@ -2,104 +2,111 @@
  * Defines a resistor model
  * @module resistor.model
  */
-define(["jquery", "exception", "resistor.model.automaton", "resistor.controller"], function ($, Exception, Automaton, controller) {
+define(["jquery", "pubsub", "exception", "resistor.model.helper.automaton", "helper.colorset"], function ($, PubSub, Exception, Automaton, ColorSet) {
     "use strict";
 
     var MAX_BAND = 6, // constant: 6 bands seem the limit a resistor can have
 
+        /**$
+         * Fired when the resistor might be in a complete valid scheme
+         * @event resistorcomplete
+         * @broadcast
+         */
+        EVENT_COMPLETE = 'resistorcomplete', // fired when resistor is ready to perform calculation values
+
         // ref: http://www.eeweb.com/toolbox/4-band-resistor-calculator/
         matchResistanceValue = function (color) {
-            switch (color.getValue()) {
-            case "black":
+            switch (color) {
+            case ColorSet.BLACK:
                 return 0;
-            case "brown":
+            case ColorSet.BROWN:
                 return 1;
-            case "red":
+            case ColorSet.RED:
                 return 2;
-            case "orange":
+            case ColorSet.ORANGE:
                 return 3;
-            case "yellow":
+            case ColorSet.YELLOW:
                 return 4;
-            case "green":
+            case ColorSet.GREEN:
                 return 5;
-            case "blue":
+            case ColorSet.BLUE:
                 return 6;
-            case "violet":
+            case ColorSet.VIOLET:
                 return 7;
-            case "grey":
+            case ColorSet.GREY:
                 return 8;
-            case "white":
+            case ColorSet.WHITE:
                 return 9;
             }
         },
 
         matchMultiplierValue = function (color) {
-            switch (color.getValue()) {
-            case "black":
+            switch (color) {
+            case ColorSet.BLACK:
                 return 1;
-            case "brown":
+            case ColorSet.BROWN:
                 return 10;
-            case "red":
+            case ColorSet.RED:
                 return 100;
-            case "orange":
+            case ColorSet.ORANGE:
                 return 1000;
-            case "yellow":
+            case ColorSet.YELLOW:
                 return 10000;
-            case "green":
+            case ColorSet.GREEN:
                 return 100000;
-            case "blue":
+            case ColorSet.BLUE:
                 return 1000000;
-            case "violet":
+            case ColorSet.VIOLET:
                 return 10000000;
-            case "grey":
+            case ColorSet.GREY:
                 return 100000000;
-            case "white":
+            case ColorSet.WHITE:
                 return 1000000000;
-            case "gold":
+            case ColorSet.GOLD:
                 return 0.1;
-            case "silver":
+            case ColorSet.SILVER:
                 return 0.01;
             }
         },
 
         matchToleranceValue = function (color) {
-            switch (color.getValue()) {
-            case "brown":
+            switch (color) {
+            case ColorSet.BROWN:
                 return 1;
-            case "red":
+            case ColorSet.RED:
                 return 2;
-            case "orange":
+            case ColorSet.ORANGE:
                 return 3;
-            case "yellow":
+            case ColorSet.YELLOW:
                 return 4;
-            case "green":
+            case ColorSet.GREEN:
                 return 0.5;
-            case "blue":
+            case ColorSet.BLUE:
                 return 0.25;
-            case "violet":
+            case ColorSet.VIOLET:
                 return 0.1;
-            case "grey":
+            case ColorSet.GREY:
                 return 0.05;
-            case "gold":
+            case ColorSet.GOLD:
                 return 5;
-            case "silver":
+            case ColorSet.SILVER:
                 return 10;
             }
         },
 
         matchTemperatureValue = function (color) {
-            switch (color.getValue()) {
-            case "brown":
+            switch (color) {
+            case ColorSet.BROWN:
                 return 100;
-            case "red":
+            case ColorSet.RED:
                 return 50;
-            case "orange":
+            case ColorSet.ORANGE:
                 return 15;
-            case "yellow":
+            case ColorSet.YELLOW:
                 return 25;
-            case "blue":
+            case ColorSet.BLUE:
                 return 10;
-            case "violet":
+            case ColorSet.VIOLET:
                 return 5;
             }
         };
@@ -151,7 +158,7 @@ define(["jquery", "exception", "resistor.model.automaton", "resistor.controller"
                 // fail silently if no color is given
                 if (color) {
                     if (automaton.acceptor(color, position) === false) {
-                        throw new Exception("resistor: automaton reported a forbidden state for color " + color.getValue() + " in position " + position + " with current bands = " + JSON.stringify(bands));
+                        throw new Exception("resistor: automaton reported a forbidden state for color " + color + " in position " + position + " with current bands = " + JSON.stringify(bands));
                     }
                     bands[position - 1] = color;
 
@@ -167,7 +174,7 @@ define(["jquery", "exception", "resistor.model.automaton", "resistor.controller"
 
                     if ((isSchemeComplete(4) && !automaton.isSchemeBand5()) || ((isSchemeComplete(5) || isSchemeComplete(6)) && automaton.isSchemeBand5())) {
                         // resistor might be complete: ready for calculations
-                        controller.$wrapped.trigger("resistorcomplete", {
+                        PubSub.publish(EVENT_COMPLETE, {
                             tolerance: getTolerance(),
                             resistance: getResistance()
                         });

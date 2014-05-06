@@ -1,4 +1,4 @@
-require(["resistor.model", "color.model", "resistor.controller"], function (Resistor, color, controller) {
+require(["pubsub", "resistor.model", "helper.colorset"], function (PubSub, Resistor, ColorSet) {
     "use strict";
 
     describe("resistor", function () {
@@ -9,17 +9,17 @@ require(["resistor.model", "color.model", "resistor.controller"], function (Resi
                     resistor.setBandColor(arguments[i], i + 1);
                 }
             },
-            yellow = color("yellow"),
-            black = color("black"),
-            red = color("red"),
-            silver = color("silver"),
-            green = color("green"),
-            violet = color("violet"),
-            orange = color("orange"),
-            gold = color("gold"),
-            white = color("white"),
-            blue = color("blue"),
-            grey = color("grey");
+            yellow = ColorSet.YELLOW,
+            black = ColorSet.BLACK,
+            red = ColorSet.RED,
+            silver = ColorSet.SILVER,
+            green = ColorSet.GREEN,
+            violet = ColorSet.VIOLET,
+            orange = ColorSet.ORANGE,
+            gold = ColorSet.GOLD,
+            white = ColorSet.WHITE,
+            blue = ColorSet.BLUE,
+            grey = ColorSet.GREY;
 
         beforeEach(function () {
             resistor = new Resistor();
@@ -33,10 +33,9 @@ require(["resistor.model", "color.model", "resistor.controller"], function (Resi
                 resistor.setBandColor(yellow, 1);
             }).not.toThrow();
         });
-        it("should deny invalid color", function () {
-            expect(function () {
-                resistor.setBandColor(color("gooey"), 1);
-            }).toThrow();
+        it("should not add invalid color", function () {
+            resistor.setBandColor(ColorSet.GOOEY, 1);
+            expect(resistor.getBandColor(1)).toBeUndefined();
         });
         it("should keep its added colors", function () {
             resistor.setBandColor(yellow, 1);
@@ -214,10 +213,11 @@ require(["resistor.model", "color.model", "resistor.controller"], function (Resi
         });
 
         describe("testing 'resistorcomplete' event", function () {
-            it("should receive event on 4-band valid resistor", function () {
+            it("should publish event on 4-band valid resistor", function () {
                 var done = false, data;
 
-                controller.$wrapped.on('resistorcomplete', function (e, d) {
+                PubSub.subscribe('resistorcomplete', function (msg, d) {
+                    msg.toto = undefined; // shut jslint up!
                     data = d;
                     done = true;
                 });

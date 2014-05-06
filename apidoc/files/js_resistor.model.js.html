@@ -43,8 +43,6 @@
             
                 <li><a href="../classes/Automaton.html">Automaton</a></li>
             
-                <li><a href="../classes/Color.html">Color</a></li>
-            
                 <li><a href="../classes/Resistor.html">Resistor</a></li>
             
             </ul>
@@ -53,7 +51,7 @@
             
                 <li><a href="../modules/automaton.model.html">automaton.model</a></li>
             
-                <li><a href="../modules/color.model.html">color.model</a></li>
+                <li><a href="../modules/color.helper.html">color.helper</a></li>
             
                 <li><a href="../modules/resistor.model.html">resistor.model</a></li>
             
@@ -100,104 +98,111 @@
  * Defines a resistor model
  * @module resistor.model
  */
-define([&quot;jquery&quot;, &quot;exception&quot;, &quot;resistor.model.automaton&quot;, &quot;resistor.controller&quot;], function ($, Exception, Automaton, controller) {
+define([&quot;jquery&quot;, &quot;exception&quot;, &quot;resistor.model.helper.automaton&quot;, &quot;helper.colorset&quot;], function ($, Exception, Automaton, ColorSet) {
     &quot;use strict&quot;;
 
     var MAX_BAND = 6, // constant: 6 bands seem the limit a resistor can have
 
+        /**$
+         * Fired when the resistor might be in a complete valid scheme
+         * @event resistorcomplete
+         * @broadcast
+         */
+        EVENT_COMPLETE = &#x27;resistorcomplete&#x27;, // fired when resistor is ready to perform calculation values
+
         // ref: http://www.eeweb.com/toolbox/4-band-resistor-calculator/
         matchResistanceValue = function (color) {
-            switch (color.getValue()) {
-            case &quot;black&quot;:
+            switch (color) {
+            case ColorSet.BLACK:
                 return 0;
-            case &quot;brown&quot;:
+            case ColorSet.BROWN:
                 return 1;
-            case &quot;red&quot;:
+            case ColorSet.RED:
                 return 2;
-            case &quot;orange&quot;:
+            case ColorSet.ORANGE:
                 return 3;
-            case &quot;yellow&quot;:
+            case ColorSet.YELLOW:
                 return 4;
-            case &quot;green&quot;:
+            case ColorSet.GREEN:
                 return 5;
-            case &quot;blue&quot;:
+            case ColorSet.BLUE:
                 return 6;
-            case &quot;violet&quot;:
+            case ColorSet.VIOLET:
                 return 7;
-            case &quot;grey&quot;:
+            case ColorSet.GREY:
                 return 8;
-            case &quot;white&quot;:
+            case ColorSet.WHITE:
                 return 9;
             }
         },
 
         matchMultiplierValue = function (color) {
             switch (color.getValue()) {
-            case &quot;black&quot;:
+            case ColorSet.BLACK:
                 return 1;
-            case &quot;brown&quot;:
+            case ColorSet.BROWN:
                 return 10;
-            case &quot;red&quot;:
+            case ColorSet.RED:
                 return 100;
-            case &quot;orange&quot;:
+            case ColorSet.ORANGE:
                 return 1000;
-            case &quot;yellow&quot;:
+            case ColorSet.YELLOW:
                 return 10000;
-            case &quot;green&quot;:
+            case ColorSet.GREEN:
                 return 100000;
-            case &quot;blue&quot;:
+            case ColorSet.BLUE:
                 return 1000000;
-            case &quot;violet&quot;:
+            case ColorSet.VIOLET:
                 return 10000000;
-            case &quot;grey&quot;:
+            case ColorSet.GREY:
                 return 100000000;
-            case &quot;white&quot;:
+            case ColorSet.WHITE:
                 return 1000000000;
-            case &quot;gold&quot;:
+            case ColorSet.GOLD:
                 return 0.1;
-            case &quot;silver&quot;:
+            case ColorSet.SILVER:
                 return 0.01;
             }
         },
 
         matchToleranceValue = function (color) {
             switch (color.getValue()) {
-            case &quot;brown&quot;:
+            case ColorSet.BROWN:
                 return 1;
-            case &quot;red&quot;:
+            case ColorSet.RED:
                 return 2;
-            case &quot;orange&quot;:
+            case ColorSet.ORANGE:
                 return 3;
-            case &quot;yellow&quot;:
+            case ColorSet.YELLOW:
                 return 4;
-            case &quot;green&quot;:
+            case ColorSet.GREEN:
                 return 0.5;
-            case &quot;blue&quot;:
+            case ColorSet.BLUE:
                 return 0.25;
-            case &quot;violet&quot;:
+            case ColorSet.VIOLET:
                 return 0.1;
-            case &quot;grey&quot;:
+            case ColorSet.GREY:
                 return 0.05;
-            case &quot;gold&quot;:
+            case ColorSet.GOLD:
                 return 5;
-            case &quot;silver&quot;:
+            case ColorSet.SILVER:
                 return 10;
             }
         },
 
         matchTemperatureValue = function (color) {
             switch (color.getValue()) {
-            case &quot;brown&quot;:
+            case ColorSet.BROWN:
                 return 100;
-            case &quot;red&quot;:
+            case ColorSet.RED:
                 return 50;
-            case &quot;orange&quot;:
+            case ColorSet.ORANGE:
                 return 15;
-            case &quot;yellow&quot;:
+            case ColorSet.YELLOW:
                 return 25;
-            case &quot;blue&quot;:
+            case ColorSet.BLUE:
                 return 10;
-            case &quot;violet&quot;:
+            case ColorSet.VIOLET:
                 return 5;
             }
         };
@@ -249,7 +254,7 @@ define([&quot;jquery&quot;, &quot;exception&quot;, &quot;resistor.model.automato
                 // fail silently if no color is given
                 if (color) {
                     if (automaton.acceptor(color, position) === false) {
-                        throw new Exception(&quot;resistor: automaton reported a forbidden state for color &quot; + color.getValue() + &quot; in position &quot; + position + &quot; with current bands = &quot; + JSON.stringify(bands));
+                        throw new Exception(&quot;resistor: automaton reported a forbidden state for color &quot; + color + &quot; in position &quot; + position + &quot; with current bands = &quot; + JSON.stringify(bands));
                     }
                     bands[position - 1] = color;
 
@@ -265,7 +270,7 @@ define([&quot;jquery&quot;, &quot;exception&quot;, &quot;resistor.model.automato
 
                     if ((isSchemeComplete(4) &amp;&amp; !automaton.isSchemeBand5()) || ((isSchemeComplete(5) || isSchemeComplete(6)) &amp;&amp; automaton.isSchemeBand5())) {
                         // resistor might be complete: ready for calculations
-                        controller.$wrapped.trigger(&quot;resistorcomplete&quot;, {
+                        $.event.trigger(EVENT_COMPLETE, {
                             tolerance: getTolerance(),
                             resistance: getResistance()
                         });

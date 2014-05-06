@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>resistor.model</title>
+    <title>js/helper.colorset.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -90,50 +90,94 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>resistor.model Module</h1>
-<div class="box clearfix meta">
-    
+                        <h1 class="file-heading">File: js/helper.colorset.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+* Defines the color range helper for a resistor with its 12 authorized values
+* @module color.helper
+*/
+define(function () {
+    &quot;use strict&quot;;
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/js_resistor.model.js.html#l114"><code>js&#x2F;resistor.model.js:114</code></a>
-        </div>
-    
+    var colorSet = {
+        /**
+         * @property BLACK
+         * @final
+         */
+        BLACK: &quot;black&quot;,
+        /**
+         * @property BROWN
+         * @final
+         */
+        BROWN: &quot;brown&quot;,
+        /**
+         * @property RED
+         * @final
+         */
+        RED: &quot;red&quot;,
+        /**
+         * @property ORANGE
+         * @final
+         */
+        ORANGE: &quot;orange&quot;,
+        /**
+         * @property YELLOW
+         * @final
+         */
+        YELLOW: &quot;yellow&quot;,
+        /**
+         * @property GREEN
+         * @final
+         */
+        GREEN: &quot;green&quot;,
+        /**
+         * @property BLUE
+         * @final
+         */
+        BLUE: &quot;blue&quot;,
+        /**
+         * @property VIOLET
+         * @final
+         */
+        VIOLET: &quot;violet&quot;,
+        /**
+         * @property GREY
+         * @final
+         */
+        GREY: &quot;grey&quot;,
+        /**
+         * @property WHITE
+         * @final
+         */
+        WHITE: &quot;white&quot;,
+        /**
+         * @property BROWN
+         * @final
+         */
+        SILVER: &quot;silver&quot;,
+        /**
+         * @property GOLD
+         * @final
+         */
+        GOLD: &quot;gold&quot;,
+        /**
+         * @method all
+         * @return {Array} an array of all possible colors
+         */
+        all: function () {
+            return [this.WHITE, this.BLACK, this.GREY, this.YELLOW, this.GOLD, this.ORANGE, this.SILVER, this.VIOLET, this.RED, this.BLUE, this.GREEN, this.BROWN];
+        }
+    };
 
-    
-</div>
+    /**
+     * @return {ColorSet} colors helper
+     */
+    return colorSet;
+});
 
-
-
-<div class="box intro">
-    <p>Defines a resistor model</p>
-
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/Resistor.html">
-                        Resistor
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+    </pre>
 </div>
 
                     </div>

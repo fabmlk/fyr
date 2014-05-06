@@ -2,12 +2,11 @@ YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
         "Automaton",
-        "Color",
         "Resistor"
     ],
     "modules": [
         "automaton.model",
-        "color.model",
+        "color.helper",
         "resistor.model"
     ],
     "allModules": [
@@ -17,9 +16,9 @@ YUI.add("yuidoc-meta", function(Y) {
             "description": "mode resistor uses this automaton/graph to detect invalid color schemes based on current resistor state"
         },
         {
-            "displayName": "color.model",
-            "name": "color.model",
-            "description": "Defines a color for a resistor within its 11 authorized values range"
+            "displayName": "color.helper",
+            "name": "color.helper",
+            "description": "Defines the color range helper for a resistor with its 12 authorized values"
         },
         {
             "displayName": "resistor.model",

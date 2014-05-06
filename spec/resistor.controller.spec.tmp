@@ -1,0 +1,72 @@
+require(["jquery", "resistor.controller", "palette.view", "resistor.model", "color.model"], function ($, Controller, PaletteView, ResistorView, Resistor, color) {
+    "use strict";
+
+    xdescribe("resistor controller", function () {
+        var controller, palette, view, resistor,
+            blue = color("blue"),
+            green = color("green"),
+            red = color("red"),
+            yellow = color("yellow"),
+            black = color("black"),
+            white = color("white"),
+            orange = color("orange"),
+            brown = color("brown"),
+            violet = color("violet"),
+            gold = color("gold"),
+            silver = color("silver"),
+            grey = color("grey"),
+
+            paletteContains = function (colors) {
+                var args = [].splice.call(arguments, 1).shift(), i, allTrue = true;
+                for (i = 0; i < args.length; i += 1) {
+                    allTrue = allTrue && colors.indexOf(args[i]) !== -1;
+                }
+                return allTrue && args.length > 0;
+            };
+
+        beforeEach(function () {
+            palette = new PaletteView();
+            view = new ResistorView();
+            resistor = new Resistor();
+            controller = new Controller(resistor, view, palette);
+        });
+
+        it("should return correct position choices on selected color with initially emptied resistor", function () {
+            controller.selectColorYellow();
+            expect(view.validPositions).toEqual([1, 2, 3, 4, 5, 6]);
+            controller.selectColorBlack();
+            expect(view.validPositions).toEqual([2, 3, 4]);
+            controller.selectColorGold();
+            expect(view.validPositions).toEqual([3, 4, 5]);
+            controller.selectColorSilver();
+            expect(view.validPositions).toEqual([3, 4, 5]);
+            controller.selectColorWhite();
+            expect(view.validPositions).toEqual([1, 2, 3, 4]);
+        });
+
+        it("should return correct color choices based on any selected position from empty resistor", function () {
+            controller.selectPosition(1);
+            expect(paletteContains(palette.validColors, yellow, white, orange, green, red, brown, grey, blue, violet)).toEqual(true);
+
+            controller.selectPosition(5);
+            expect(paletteContains(palette.validColors, yellow, white, orange, green, red, brown, grey, blue, violet, black, white, grey, gold)).toEqual(true);
+
+            controller.selectPosition(6);
+            expect(paletteContains(palette.validColors, brown, red, orange, yellow, blue, violet)).toEqual(true);
+        });
+
+        it("should return correct color choices based on selected position from specific resistor scheme", function () {
+            resistor.setBandColor(black, 4);
+            controller.selectPosition(3);
+            expect(palette.validColors).not.toContain(gold);
+            expect(palette.validColors).not.toContain(silver);
+            resistor.clear();
+
+            resistor.setBandColor(silver, 2);
+            controller.selectPosition(5);
+            expect(palette.validColors).toEqual([]);
+            controller.selectPosition(6);
+            expect(palette.validColors).toEqual([]);
+        });
+    });
+});

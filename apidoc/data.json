@@ -6,19 +6,17 @@
         "url": ""
     },
     "files": {
-        "js/color.model.js": {
-            "name": "js/color.model.js",
+        "js/helper.colorset.js": {
+            "name": "js/helper.colorset.js",
             "modules": {
-                "color.model": 1
+                "color.helper": 1
             },
-            "classes": {
-                "Color": 1
-            },
+            "classes": {},
             "fors": {},
             "namespaces": {}
         },
-        "js/resistor.model.automaton.js": {
-            "name": "js/resistor.model.automaton.js",
+        "js/resistor.model.helper.automaton.js": {
+            "name": "js/resistor.model.helper.automaton.js",
             "modules": {
                 "automaton.model": 1
             },
@@ -41,18 +39,16 @@
         }
     },
     "modules": {
-        "color.model": {
-            "name": "color.model",
+        "color.helper": {
+            "name": "color.helper",
             "submodules": {},
-            "classes": {
-                "Color": 1
-            },
+            "classes": {},
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "js/color.model.js",
-            "line": 37,
-            "description": "Defines a color for a resistor within its 11 authorized values range"
+            "file": "js/helper.colorset.js",
+            "line": 1,
+            "description": "Defines the color range helper for a resistor with its 12 authorized values"
         },
         "automaton.model": {
             "name": "automaton.model",
@@ -63,8 +59,8 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "js/resistor.model.automaton.js",
-            "line": 81,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 87,
             "description": "mode resistor uses this automaton/graph to detect invalid color schemes based on current resistor state"
         },
         "resistor.model": {
@@ -77,33 +73,11 @@
             "namespaces": {},
             "tag": "module",
             "file": "js/resistor.model.js",
-            "line": 107,
+            "line": 114,
             "description": "Defines a resistor model"
         }
     },
     "classes": {
-        "Color": {
-            "name": "Color",
-            "shortname": "Color",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "color.model",
-            "namespace": "",
-            "file": "js/color.model.js",
-            "line": 37,
-            "description": "Create a color object",
-            "is_constructor": 1,
-            "params": [
-                {
-                    "name": "color",
-                    "description": "a color in plain english",
-                    "type": "String"
-                }
-            ]
-        },
         "Automaton": {
             "name": "Automaton",
             "shortname": "Automaton",
@@ -114,8 +88,8 @@
             "extension_for": [],
             "module": "automaton.model",
             "namespace": "",
-            "file": "js/resistor.model.automaton.js",
-            "line": 81,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 87,
             "description": "create an automaton for the resistor",
             "is_constructor": 1
         },
@@ -130,7 +104,7 @@
             "module": "resistor.model",
             "namespace": "",
             "file": "js/resistor.model.js",
-            "line": 107,
+            "line": 114,
             "description": "A resistor object",
             "is_constructor": 1,
             "params": [
@@ -146,20 +120,138 @@
     },
     "classitems": [
         {
-            "file": "js/color.model.js",
-            "line": 23,
-            "itemtype": "method",
-            "name": "getValue",
-            "return": {
-                "description": "color value in plain english",
-                "type": "String"
-            },
-            "class": "Color",
-            "module": "color.model"
+            "file": "js/helper.colorset.js",
+            "line": 9,
+            "itemtype": "property",
+            "name": "BLACK",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
         },
         {
-            "file": "js/resistor.model.automaton.js",
-            "line": 95,
+            "file": "js/helper.colorset.js",
+            "line": 14,
+            "itemtype": "property",
+            "name": "BROWN",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 19,
+            "itemtype": "property",
+            "name": "RED",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 24,
+            "itemtype": "property",
+            "name": "ORANGE",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 29,
+            "itemtype": "property",
+            "name": "YELLOW",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 34,
+            "itemtype": "property",
+            "name": "GREEN",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 39,
+            "itemtype": "property",
+            "name": "BLUE",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 44,
+            "itemtype": "property",
+            "name": "VIOLET",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 49,
+            "itemtype": "property",
+            "name": "GREY",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 54,
+            "itemtype": "property",
+            "name": "WHITE",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 59,
+            "itemtype": "property",
+            "name": "BROWN",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 64,
+            "itemtype": "property",
+            "name": "GOLD",
+            "final": 1,
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 69,
+            "itemtype": "method",
+            "name": "all",
+            "return": {
+                "description": "an array of all possible colors",
+                "type": "Array"
+            },
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 78,
+            "return": {
+                "description": "colors helper",
+                "type": "ColorSet"
+            },
+            "class": "Automaton",
+            "module": "color.helper"
+        },
+        {
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 101,
             "description": "automaton's acceptor for a given color's position",
             "itemtype": "method",
             "name": "acceptor",
@@ -183,8 +275,8 @@
             "module": "automaton.model"
         },
         {
-            "file": "js/resistor.model.automaton.js",
-            "line": 117,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 123,
             "description": "backtracks automaton from a band-4 only or band-5 only scheme to a band-any scheme.\nIt doesn't backtrack from a FORBIDDEN_STATE as an automaton is memory-less: it cannot know which insertion might have put it in a forbidden state",
             "itemtype": "method",
             "name": "backtrack",
@@ -204,8 +296,8 @@
             "module": "automaton.model"
         },
         {
-            "file": "js/resistor.model.automaton.js",
-            "line": 136,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 142,
             "description": "reset automaton",
             "itemtype": "method",
             "name": "reset",
@@ -213,8 +305,8 @@
             "module": "automaton.model"
         },
         {
-            "file": "js/resistor.model.automaton.js",
-            "line": 144,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 150,
             "description": "provides the list of forbidden colors given a position",
             "itemtype": "method",
             "name": "getForbiddenColors",
@@ -233,8 +325,8 @@
             "module": "automaton.model"
         },
         {
-            "file": "js/resistor.model.automaton.js",
-            "line": 163,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 177,
             "description": "provides the list of forbidden positions given a color",
             "itemtype": "method",
             "name": "getForbiddenPositions",
@@ -253,8 +345,8 @@
             "module": "automaton.model"
         },
         {
-            "file": "js/resistor.model.automaton.js",
-            "line": 173,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 187,
             "itemtype": "method",
             "name": "isSchemeBand4",
             "return": {
@@ -265,8 +357,8 @@
             "module": "automaton.model"
         },
         {
-            "file": "js/resistor.model.automaton.js",
-            "line": 181,
+            "file": "js/resistor.model.helper.automaton.js",
+            "line": 195,
             "itemtype": "method",
             "name": "isSchemeBand5",
             "return": {
@@ -278,7 +370,17 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 178,
+            "line": 10,
+            "description": "Fired when the resistor might be in a complete valid scheme",
+            "itemtype": "event",
+            "name": "resistorcomplete",
+            "broadcast": "",
+            "class": "Resistor",
+            "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.model.js",
+            "line": 185,
             "description": "Best not call this method manually, use the 'resistorcomplete' event instead",
             "itemtype": "method",
             "name": "getTolerance",
@@ -291,7 +393,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 185,
+            "line": 192,
             "description": "Best not call this method manually, use the 'resistorcomplete' event instead",
             "itemtype": "method",
             "name": "getResistance",
@@ -304,7 +406,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 192,
+            "line": 199,
             "description": "Best not call this method manually, use the 'resistorcomplete' event instead",
             "itemtype": "method",
             "name": "getTemperature",
@@ -317,7 +419,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 199,
+            "line": 206,
             "description": "Sets color at given position",
             "itemtype": "method",
             "name": "setBandColor",
@@ -338,7 +440,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 209,
+            "line": 216,
             "itemtype": "method",
             "name": "getBandColor",
             "params": [
@@ -357,7 +459,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 218,
+            "line": 225,
             "itemtype": "method",
             "name": "unsetBand",
             "params": [
@@ -372,7 +474,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 229,
+            "line": 236,
             "description": "Clear all resistor colors",
             "itemtype": "method",
             "name": "clear",
@@ -380,5 +482,10 @@
             "module": "resistor.model"
         }
     ],
-    "warnings": []
+    "warnings": [
+        {
+            "message": "Missing item type",
+            "line": " js/helper.colorset.js:78"
+        }
+    ]
 }
