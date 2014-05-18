@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>js/helper.bandsview.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Automaton.html">Automaton</a></li>
+            
+                <li><a href="../classes/BandsView.html">BandsView</a></li>
+            
+                <li><a href="../classes/BandView.html">BandView</a></li>
+            
+                <li><a href="../classes/ColorSet.html">ColorSet</a></li>
+            
+                <li><a href="../classes/Controller.html">Controller</a></li>
+            
+                <li><a href="../classes/Resistor.html">Resistor</a></li>
+            
+                <li><a href="../classes/ResultView.html">ResultView</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/helper.automaton.html">helper.automaton</a></li>
+            
+                <li><a href="../modules/helper.bandsview.html">helper.bandsview</a></li>
+            
+                <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
+            
+                <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
+            
+                <li><a href="../modules/resistor.model.html">resistor.model</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: js/helper.bandsview.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * Helper for managing the html view of the bands in the resistor.view
+ * On top of improved code readability in the resistor.view, this level of abstraction permits to adjust the html code of the bands
+ * wihtout modifying its internal logic, i.e, as long as the bandsview is constructed with its bands set at the correct index in the page,
+ * we might decide to add or remove wrappers around them without modifying neither the resistor.view code, nor this helper
+ * @module helper.bandsview
+ */
+define([&quot;jquery&quot;, &quot;draggabilly&quot;, &quot;pubsub&quot;], function ($, Draggabilly, PubSub) {
+    &quot;use strict&quot;;
+
+    var EVENT_UNSET_BAND = &#x27;unsetband&#x27;, // triggered when a band is unset, made accessible in BandsView
+        /**
+         * This class represents the view of a band. It is intended to be instanciated only via class Bandsview
+         * @class BandView
+         * @constructor
+         * @param {jQuery Object} $this the jquery object of the band
+         * @param {Integer} index the index of the band in the resistor, ranging from 1 to 6
+         */
+        BandView = function ($this, index) {
+            // each band contains its own reference to a Draggabilly object
+            var draggabilly = new Draggabilly($this[0], {
+                    axis: &#x27;y&#x27; // only drag along y axis
+                });
+
+            /**
+             * Set a color to the band
+             * @method set
+             * @param {jQuery Object} $color the jquery object of a color
+             */
+            this.set = function ($color) {
+                $this.css(&quot;background-color&quot;, $color.css(&quot;background-color&quot;));
+            };
+
+            /**
+             * Unset a color from the band and triggers EVENT_UNSET_BAND event
+             * @method unset
+             */
+            this.unset = function () {
+                $this.css(&quot;background&quot;, &quot;&quot;);
+                PubSub.publish(EVENT_UNSET_BAND, this);
+            };
+
+            /**
+             * Gives focus to a band
+             * @method focus
+             */
+            this.focus = function () {
+                $this.addClass(&quot;selected&quot;);
+            };
+
+            /**
+             * Remove focus from a band
+             * @method blur
+             */
+            this.blur = function () {
+                $this.removeClass(&quot;selected&quot;);
+            };
+
+            /**
+             * @method hasFocus
+             * @return {Boolean} wether the band has currently the focus
+             */
+            this.hasFocus = function () {
+                return $this.hasClass(&quot;selected&quot;);
+            };
+
+            /**
+             * @method getDraggabilly
+             * @return {Object} the draggabilly instance of the band
+             */
+            this.getDraggabilly = function () {
+                return draggabilly;
+            };
+
+            /**
+             * @method index
+             * @return {Integer} the index of the band
+             */
+            this.index = function () {
+                return index;
+            };
+
+            /**
+             * Instance to its jQuery band object
+             * @property $it
+             * @type jQuery Object
+             */
+            this.$it = $this;
+        };
+
+
+    /**
+     * Defines a BandsView: this is the view of the collection of bands in the page
+     * @class BandsView
+     * @constructor
+     * @param {jQuery Object} $bands the jQuery collection of the bands
+     */
+    return function ($bands) {
+        var bands = [];
+
+        $bands.each(function () {
+            var band = new BandView($(this), bands.length + 1);
+            bands.push(band);
+        });
+
+        /**
+         * Event triggered when a band has been unset
+         * @event EVENT_UNSET_BAND
+         * @broadcast
+         */
+        this.EVENT_UNSET_BAND = EVENT_UNSET_BAND;
+
+        /**
+         * @method getBand
+         * @param {Integer|jQuery Object} indexOr$el the index of the band or its jquery object
+         * @return {BandView} a BandView of the band
+         */
+        this.getBand = function (indexOr$el) {
+            if (typeof indexOr$el === &quot;number&quot;) {
+                return bands[indexOr$el];
+            }
+            // Array.prototype.find() is ES6 !! Do not use it yet
+            return bands.filter(function (band) {
+                return band.$it.is(indexOr$el);
+            })[0];
+        };
+
+        /**
+         * @method arrayView
+         * @return {Array} an array of all the BandViews
+         */
+        this.arrayView = function () {
+            return bands;
+        };
+
+        /**
+         * @method getFocused
+         * @return {BandView} the BandView having currently the focus
+         */
+        this.getFocused = function () {
+            var focusedBand;
+            // Array.prototype.find is ES6: DO NOT USE IT YET
+            $.each(bands, function (i) {
+                if (bands[i].hasFocus()) {
+                    focusedBand = bands[i];
+                    return false; // break jquery loop
+                }
+            });
+            return focusedBand;
+        };
+
+        /**
+         * @method getNext
+         * @param {BandView} band the BandView from which we want its next brother
+         * @return {BandView} the next BandView or itself if no next brother
+         */
+        this.getNext = function (band) {
+            var itIndex = bands.indexOf(band);
+            return itIndex &lt; bands.length - 1 ? bands[itIndex + 1] : band;
+        };
+    };
+});
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

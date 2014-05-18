@@ -1,6 +1,7 @@
 /**
 * Defines the color range helper for a resistor with its 12 authorized values
-* @module color.helper
+* @module helper.colorset
+* @class ColorSet
 */
 define(function () {
     "use strict";

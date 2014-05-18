@@ -1,0 +1,15 @@
+{
+  "name": "draggabilly.pkgd",
+  "_cacheHeaders": {
+    "ETag": "\"048ca46f113dd5528515dd71713e9f74\"",
+    "Last-Modified": "Thu, 06 Mar 2014 13:17:13 GMT",
+    "Content-Length": "42677",
+    "Content-Type": "application/javascript"
+  },
+  "_release": "e-tag:048ca46f1",
+  "main": "index.js",
+  "_source": "http://draggabilly.desandro.com/draggabilly.pkgd.js",
+  "_target": "*",
+  "_originalSource": "http://draggabilly.desandro.com/draggabilly.pkgd.js",
+  "_direct": true
+}

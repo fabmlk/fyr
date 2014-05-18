@@ -6,22 +6,58 @@
         "url": ""
     },
     "files": {
-        "js/helper.colorset.js": {
-            "name": "js/helper.colorset.js",
+        "js/helper.automaton.js": {
+            "name": "js/helper.automaton.js",
             "modules": {
-                "color.helper": 1
-            },
-            "classes": {},
-            "fors": {},
-            "namespaces": {}
-        },
-        "js/resistor.model.helper.automaton.js": {
-            "name": "js/resistor.model.helper.automaton.js",
-            "modules": {
-                "automaton.model": 1
+                "helper.automaton": 1
             },
             "classes": {
                 "Automaton": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/helper.bandsview.js": {
+            "name": "js/helper.bandsview.js",
+            "modules": {
+                "helper.bandsview": 1
+            },
+            "classes": {
+                "BandView": 1,
+                "BandsView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/helper.colorset.js": {
+            "name": "js/helper.colorset.js",
+            "modules": {
+                "helper.colorset": 1
+            },
+            "classes": {
+                "ColorSet": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/helper.resultview.js": {
+            "name": "js/helper.resultview.js",
+            "modules": {
+                "helper.resultview": 1
+            },
+            "classes": {
+                "ResultView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/resistor.controller.js": {
+            "name": "js/resistor.controller.js",
+            "modules": {
+                "resistor.controller": 1
+            },
+            "classes": {
+                "Controller": 1
             },
             "fors": {},
             "namespaces": {}
@@ -39,19 +75,8 @@
         }
     },
     "modules": {
-        "color.helper": {
-            "name": "color.helper",
-            "submodules": {},
-            "classes": {},
-            "fors": {},
-            "namespaces": {},
-            "tag": "module",
-            "file": "js/helper.colorset.js",
-            "line": 1,
-            "description": "Defines the color range helper for a resistor with its 12 authorized values"
-        },
-        "automaton.model": {
-            "name": "automaton.model",
+        "helper.automaton": {
+            "name": "helper.automaton",
             "submodules": {},
             "classes": {
                 "Automaton": 1
@@ -59,9 +84,62 @@
             "fors": {},
             "namespaces": {},
             "tag": "module",
-            "file": "js/resistor.model.helper.automaton.js",
-            "line": 87,
-            "description": "mode resistor uses this automaton/graph to detect invalid color schemes based on current resistor state"
+            "file": "js/helper.automaton.js",
+            "line": 83,
+            "description": "module resistor uses this automaton/graph to detect invalid color schemes based on current resistor state"
+        },
+        "helper.bandsview": {
+            "name": "helper.bandsview",
+            "submodules": {},
+            "classes": {
+                "BandView": 1,
+                "BandsView": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js/helper.bandsview.js",
+            "line": 92,
+            "description": "Helper for managing the html view of the bands in the resistor.view\nOn top of improved code readability in the resistor.view, this level of abstraction permits to adjust the html code of the bands\nwihtout modifying its internal logic, i.e, as long as the bandsview is constructed with its bands set at the correct index in the page,\nwe might decide to add or remove wrappers around them without modifying neither the resistor.view code, nor this helper"
+        },
+        "helper.colorset": {
+            "name": "helper.colorset",
+            "submodules": {},
+            "classes": {
+                "ColorSet": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js/helper.colorset.js",
+            "line": 1,
+            "description": "Defines the color range helper for a resistor with its 12 authorized values"
+        },
+        "helper.resultview": {
+            "name": "helper.resultview",
+            "submodules": {},
+            "classes": {
+                "ResultView": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js/helper.resultview.js",
+            "line": 33,
+            "description": "Helper to represent the view of the result to display from a calculated resistor"
+        },
+        "resistor.controller": {
+            "name": "resistor.controller",
+            "submodules": {},
+            "classes": {
+                "Controller": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js/resistor.controller.js",
+            "line": 8,
+            "description": "Controller for the resistor"
         },
         "resistor.model": {
             "name": "resistor.model",
@@ -73,7 +151,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "js/resistor.model.js",
-            "line": 114,
+            "line": 105,
             "description": "Defines a resistor model"
         }
     },
@@ -86,12 +164,123 @@
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "automaton.model",
+            "module": "helper.automaton",
             "namespace": "",
-            "file": "js/resistor.model.helper.automaton.js",
-            "line": 87,
-            "description": "create an automaton for the resistor",
+            "file": "js/helper.automaton.js",
+            "line": 83,
+            "description": "An automaton for the resistor",
             "is_constructor": 1
+        },
+        "BandView": {
+            "name": "BandView",
+            "shortname": "BandView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "helper.bandsview",
+            "namespace": "",
+            "file": "js/helper.bandsview.js",
+            "line": 12,
+            "description": "This class represents the view of a band. It is intended to be instanciated only via class Bandsview",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "$this",
+                    "description": "the jquery object of the band",
+                    "type": "JQuery Object"
+                },
+                {
+                    "name": "index",
+                    "description": "the index of the band in the resistor, ranging from 1 to 6",
+                    "type": "Integer"
+                }
+            ]
+        },
+        "BandsView": {
+            "name": "BandsView",
+            "shortname": "BandsView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "helper.bandsview",
+            "namespace": "",
+            "file": "js/helper.bandsview.js",
+            "line": 92,
+            "description": "Defines a BandsView: this is the view of the collection of bands in the page",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "$bands",
+                    "description": "the jQuery collection of the bands",
+                    "type": "JQuery Object"
+                }
+            ]
+        },
+        "ColorSet": {
+            "name": "ColorSet",
+            "shortname": "ColorSet",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "helper.colorset",
+            "namespace": "",
+            "file": "js/helper.colorset.js",
+            "line": 1,
+            "description": "Defines the color range helper for a resistor with its 12 authorized values"
+        },
+        "ResultView": {
+            "name": "ResultView",
+            "shortname": "ResultView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "helper.resultview",
+            "namespace": "",
+            "file": "js/helper.resultview.js",
+            "line": 33,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "$this",
+                    "description": "the jquery object of the result",
+                    "type": "JQuery Object"
+                },
+                {
+                    "name": "$btnFind",
+                    "description": "the jquery object of the button \"Find\"",
+                    "type": "JQuery Object"
+                }
+            ]
+        },
+        "Controller": {
+            "name": "Controller",
+            "shortname": "Controller",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "resistor.controller",
+            "namespace": "",
+            "file": "js/resistor.controller.js",
+            "line": 8,
+            "description": "Defines the MVC controller for the app.\nIt acts as a complete proxy between the view and the model so that the view will never interact with the resistor model directly.\nThe controller is also decoupled from the view. It has no knowledge of it directly as it expects the view to provide the necessary callbacks functions.\nIt subscribes to the EVENT_COMPLETE event.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "resistor",
+                    "description": "a resistor model",
+                    "type": "Resistor"
+                }
+            ]
         },
         "Resistor": {
             "name": "Resistor",
@@ -104,7 +293,7 @@
             "module": "resistor.model",
             "namespace": "",
             "file": "js/resistor.model.js",
-            "line": 114,
+            "line": 105,
             "description": "A resistor object",
             "is_constructor": 1,
             "params": [
@@ -120,137 +309,7 @@
     },
     "classitems": [
         {
-            "file": "js/helper.colorset.js",
-            "line": 9,
-            "itemtype": "property",
-            "name": "BLACK",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 14,
-            "itemtype": "property",
-            "name": "BROWN",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 19,
-            "itemtype": "property",
-            "name": "RED",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 24,
-            "itemtype": "property",
-            "name": "ORANGE",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 29,
-            "itemtype": "property",
-            "name": "YELLOW",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 34,
-            "itemtype": "property",
-            "name": "GREEN",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 39,
-            "itemtype": "property",
-            "name": "BLUE",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 44,
-            "itemtype": "property",
-            "name": "VIOLET",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 49,
-            "itemtype": "property",
-            "name": "GREY",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 54,
-            "itemtype": "property",
-            "name": "WHITE",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 59,
-            "itemtype": "property",
-            "name": "BROWN",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 64,
-            "itemtype": "property",
-            "name": "GOLD",
-            "final": 1,
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 69,
-            "itemtype": "method",
-            "name": "all",
-            "return": {
-                "description": "an array of all possible colors",
-                "type": "Array"
-            },
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/helper.colorset.js",
-            "line": 78,
-            "return": {
-                "description": "colors helper",
-                "type": "ColorSet"
-            },
-            "class": "Automaton",
-            "module": "color.helper"
-        },
-        {
-            "file": "js/resistor.model.helper.automaton.js",
+            "file": "js/helper.automaton.js",
             "line": 101,
             "description": "automaton's acceptor for a given color's position",
             "itemtype": "method",
@@ -268,14 +327,14 @@
                 }
             ],
             "return": {
-                "description": "state is not STATE_FORBIDDEN",
+                "description": "true if state is not STATE_FORBIDDEN",
                 "type": "Boolean"
             },
             "class": "Automaton",
-            "module": "automaton.model"
+            "module": "helper.automaton"
         },
         {
-            "file": "js/resistor.model.helper.automaton.js",
+            "file": "js/helper.automaton.js",
             "line": 123,
             "description": "backtracks automaton from a band-4 only or band-5 only scheme to a band-any scheme.\nIt doesn't backtrack from a FORBIDDEN_STATE as an automaton is memory-less: it cannot know which insertion might have put it in a forbidden state",
             "itemtype": "method",
@@ -293,19 +352,19 @@
                 }
             ],
             "class": "Automaton",
-            "module": "automaton.model"
+            "module": "helper.automaton"
         },
         {
-            "file": "js/resistor.model.helper.automaton.js",
+            "file": "js/helper.automaton.js",
             "line": 142,
             "description": "reset automaton",
             "itemtype": "method",
             "name": "reset",
             "class": "Automaton",
-            "module": "automaton.model"
+            "module": "helper.automaton"
         },
         {
-            "file": "js/resistor.model.helper.automaton.js",
+            "file": "js/helper.automaton.js",
             "line": 150,
             "description": "provides the list of forbidden colors given a position",
             "itemtype": "method",
@@ -322,11 +381,11 @@
                 "type": "Array"
             },
             "class": "Automaton",
-            "module": "automaton.model"
+            "module": "helper.automaton"
         },
         {
-            "file": "js/resistor.model.helper.automaton.js",
-            "line": 177,
+            "file": "js/helper.automaton.js",
+            "line": 175,
             "description": "provides the list of forbidden positions given a color",
             "itemtype": "method",
             "name": "getForbiddenPositions",
@@ -342,11 +401,11 @@
                 "type": "Array"
             },
             "class": "Automaton",
-            "module": "automaton.model"
+            "module": "helper.automaton"
         },
         {
-            "file": "js/resistor.model.helper.automaton.js",
-            "line": 187,
+            "file": "js/helper.automaton.js",
+            "line": 185,
             "itemtype": "method",
             "name": "isSchemeBand4",
             "return": {
@@ -354,11 +413,11 @@
                 "type": "Boolean"
             },
             "class": "Automaton",
-            "module": "automaton.model"
+            "module": "helper.automaton"
         },
         {
-            "file": "js/resistor.model.helper.automaton.js",
-            "line": 195,
+            "file": "js/helper.automaton.js",
+            "line": 193,
             "itemtype": "method",
             "name": "isSchemeBand5",
             "return": {
@@ -366,22 +425,548 @@
                 "type": "Boolean"
             },
             "class": "Automaton",
-            "module": "automaton.model"
+            "module": "helper.automaton"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 25,
+            "description": "Set a color to the band",
+            "itemtype": "method",
+            "name": "set",
+            "params": [
+                {
+                    "name": "$color",
+                    "description": "the jquery object of a color",
+                    "type": "JQuery Object"
+                }
+            ],
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 34,
+            "description": "Unset a color from the band and triggers EVENT_UNSET_BAND event",
+            "itemtype": "method",
+            "name": "unset",
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 43,
+            "description": "Gives focus to a band",
+            "itemtype": "method",
+            "name": "focus",
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 51,
+            "description": "Remove focus from a band",
+            "itemtype": "method",
+            "name": "blur",
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 59,
+            "itemtype": "method",
+            "name": "hasFocus",
+            "return": {
+                "description": "wether the band has currently the focus",
+                "type": "Boolean"
+            },
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 67,
+            "itemtype": "method",
+            "name": "getDraggabilly",
+            "return": {
+                "description": "the draggabilly instance of the band",
+                "type": "Object"
+            },
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 75,
+            "itemtype": "method",
+            "name": "index",
+            "return": {
+                "description": "the index of the band",
+                "type": "Integer"
+            },
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 83,
+            "description": "Instance to its jQuery band object",
+            "itemtype": "property",
+            "name": "$it",
+            "type": "jQuery Object",
+            "class": "BandView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 106,
+            "description": "Event triggered when a band has been unset",
+            "itemtype": "event",
+            "name": "EVENT_UNSET_BAND",
+            "broadcast": "",
+            "class": "BandsView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 113,
+            "itemtype": "method",
+            "name": "getBand",
+            "params": [
+                {
+                    "name": "indexOr$el",
+                    "description": "the index of the band or its jquery object",
+                    "type": "Integer|jQuery Object"
+                }
+            ],
+            "return": {
+                "description": "a BandView of the band",
+                "type": "BandView"
+            },
+            "class": "BandsView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 128,
+            "itemtype": "method",
+            "name": "arrayView",
+            "return": {
+                "description": "an array of all the BandViews",
+                "type": "Array"
+            },
+            "class": "BandsView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 136,
+            "itemtype": "method",
+            "name": "getFocused",
+            "return": {
+                "description": "the BandView having currently the focus",
+                "type": "BandView"
+            },
+            "class": "BandsView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.bandsview.js",
+            "line": 152,
+            "itemtype": "method",
+            "name": "getNext",
+            "params": [
+                {
+                    "name": "band",
+                    "description": "the BandView from which we want its next brother",
+                    "type": "BandView"
+                }
+            ],
+            "return": {
+                "description": "the next BandView or itself if no next brother",
+                "type": "BandView"
+            },
+            "class": "BandsView",
+            "module": "helper.bandsview"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 10,
+            "itemtype": "property",
+            "name": "BLACK",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 15,
+            "itemtype": "property",
+            "name": "BROWN",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 20,
+            "itemtype": "property",
+            "name": "RED",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 25,
+            "itemtype": "property",
+            "name": "ORANGE",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 30,
+            "itemtype": "property",
+            "name": "YELLOW",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 35,
+            "itemtype": "property",
+            "name": "GREEN",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 40,
+            "itemtype": "property",
+            "name": "BLUE",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 45,
+            "itemtype": "property",
+            "name": "VIOLET",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 50,
+            "itemtype": "property",
+            "name": "GREY",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 55,
+            "itemtype": "property",
+            "name": "WHITE",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 60,
+            "itemtype": "property",
+            "name": "BROWN",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 65,
+            "itemtype": "property",
+            "name": "GOLD",
+            "final": 1,
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 70,
+            "itemtype": "method",
+            "name": "all",
+            "return": {
+                "description": "an array of all possible colors",
+                "type": "Array"
+            },
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.colorset.js",
+            "line": 79,
+            "return": {
+                "description": "colors helper",
+                "type": "ColorSet"
+            },
+            "class": "ColorSet",
+            "module": "helper.colorset"
+        },
+        {
+            "file": "js/helper.resultview.js",
+            "line": 47,
+            "description": "Display the formated result and enable 'find' button",
+            "itemtype": "method",
+            "name": "on",
+            "params": [
+                {
+                    "name": "resistance",
+                    "description": "the calculated resistance",
+                    "type": "Integer"
+                },
+                {
+                    "name": "tolerance",
+                    "description": "the calculated tolerance",
+                    "type": "Integer"
+                },
+                {
+                    "name": "temperature",
+                    "description": "the calculated temperature",
+                    "type": "Integer",
+                    "optional": true
+                }
+            ],
+            "class": "ResultView",
+            "module": "helper.resultview"
+        },
+        {
+            "file": "js/helper.resultview.js",
+            "line": 63,
+            "description": "Reset result to 0 ohm and disable 'find' button",
+            "itemtype": "method",
+            "name": "off",
+            "class": "ResultView",
+            "module": "helper.resultview"
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 40,
+            "description": "Method to call when the EVENT_COMPLETE is received from the resistor.\nShould be redefined directly in the view. Keep it public for testing purposes.",
+            "itemtype": "property",
+            "name": "viewOnComplete",
+            "type": "Function",
+            "default": "'console.log()'",
+            "class": "Controller",
+            "module": "resistor.controller",
+            "subprops": [
+                {
+                    "name": "resistance",
+                    "description": "resistance value",
+                    "type": "Integer"
+                },
+                {
+                    "name": "tolerance",
+                    "description": "tolerance value",
+                    "type": "Float"
+                },
+                {
+                    "name": "temperature",
+                    "description": "temperature value",
+                    "type": "Float"
+                }
+            ]
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 54,
+            "description": "Method to call when a color is selected in the view\nShould be redefined directly in the view. Keep it public for testing purposes.",
+            "itemtype": "property",
+            "name": "viewUpdateBands",
+            "type": "Function",
+            "default": "'console.log()'",
+            "class": "Controller",
+            "module": "resistor.controller",
+            "subprops": [
+                {
+                    "name": "forbiddenPositions",
+                    "description": "array of forbidden positions",
+                    "type": "Array"
+                }
+            ]
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 66,
+            "description": "Method to call when a band position is selected in the view\nShould be redefined directly in the view. Keep it public for testing purposes.",
+            "itemtype": "property",
+            "name": "viewUpdatePalette",
+            "type": "Function",
+            "default": "'console.log()'",
+            "class": "Controller",
+            "module": "resistor.controller",
+            "subprops": [
+                {
+                    "name": "forbiddenColors",
+                    "description": "array of forbidden colors",
+                    "type": "Array"
+                }
+            ]
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 78,
+            "description": "Method to call when an error has occured\nShould be redefined directly in the view. Keep it public for testing purposes.",
+            "itemtype": "property",
+            "name": "viewOnError",
+            "type": "Function",
+            "default": "'console.error()'",
+            "class": "Controller",
+            "module": "resistor.controller",
+            "subprops": [
+                {
+                    "name": "message",
+                    "description": "message of the raised exception",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 90,
+            "description": "Select a color.",
+            "itemtype": "method",
+            "name": "selectColor",
+            "params": [
+                {
+                    "name": "color",
+                    "description": "the color object selected",
+                    "type": "Color"
+                },
+                {
+                    "name": "viewUpdateBands",
+                    "description": "the callback to receive an array of forbidden positions given the color. Overrides property 'viewUpdateBands'.",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "viewOnError",
+                    "description": "the callback to call on error. Overrides property 'viewOnError'.",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "class": "Controller",
+            "module": "resistor.controller"
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 108,
+            "description": "Select a position.",
+            "itemtype": "method",
+            "name": "selectPosition",
+            "params": [
+                {
+                    "name": "position",
+                    "description": "the band position selected",
+                    "type": "Integer"
+                },
+                {
+                    "name": "viewUpdatePalette",
+                    "description": "the callback to receive an array of forbidden colors given the position. Overrides property 'viewUpdatePalette'.",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "viewOnError",
+                    "description": "the callback to call on error. Overrides property 'viewOnError'.",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "class": "Controller",
+            "module": "resistor.controller"
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 126,
+            "description": "Set the color given to the resistor at band position.",
+            "itemtype": "method",
+            "name": "setBandColor",
+            "params": [
+                {
+                    "name": "color",
+                    "description": "the color to add",
+                    "type": "Color"
+                },
+                {
+                    "name": "position",
+                    "description": "the band position to add the color at",
+                    "type": "Integer"
+                },
+                {
+                    "name": "viewOnComplete",
+                    "description": "the callback to receive the results with the resistor values. Overrides property 'viewOnComplete'.",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "viewOnError",
+                    "description": "the callback to call on error. Overrides property 'viewOnError'.",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "class": "Controller",
+            "module": "resistor.controller"
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 143,
+            "description": "Unset the color currently at band position",
+            "itemtype": "method",
+            "name": "unsetBand",
+            "params": [
+                {
+                    "name": "position",
+                    "description": "the position of the band to unset",
+                    "type": "Integer"
+                },
+                {
+                    "name": "viewOnComplete",
+                    "description": "the callback to receive the results with the results values. Overrides property 'viewOnComplete'.",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "viewOnError",
+                    "description": "the callback to cal on error. Overrides property 'viewOnError'.",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "class": "Controller",
+            "module": "resistor.controller"
         },
         {
             "file": "js/resistor.model.js",
-            "line": 10,
+            "line": 116,
             "description": "Fired when the resistor might be in a complete valid scheme",
             "itemtype": "event",
-            "name": "resistorcomplete",
+            "name": "EVENT_COMPLETE",
             "broadcast": "",
             "class": "Resistor",
             "module": "resistor.model"
         },
         {
             "file": "js/resistor.model.js",
-            "line": 185,
-            "description": "Best not call this method manually, use the 'resistorcomplete' event instead",
+            "line": 183,
+            "description": "Best not call this method directly, use the EVENT_COMPLETE event instead",
             "itemtype": "method",
             "name": "getTolerance",
             "return": {
@@ -393,8 +978,8 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 192,
-            "description": "Best not call this method manually, use the 'resistorcomplete' event instead",
+            "line": 190,
+            "description": "Best not call this method directly, use the EVENT_COMPLETE event instead",
             "itemtype": "method",
             "name": "getResistance",
             "return": {
@@ -406,8 +991,8 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 199,
-            "description": "Best not call this method manually, use the 'resistorcomplete' event instead",
+            "line": 197,
+            "description": "Best not call this method directly, use the EVENT_COMPLETE event instead",
             "itemtype": "method",
             "name": "getTemperature",
             "return": {
@@ -419,7 +1004,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 206,
+            "line": 204,
             "description": "Sets color at given position",
             "itemtype": "method",
             "name": "setBandColor",
@@ -440,7 +1025,7 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 216,
+            "line": 214,
             "itemtype": "method",
             "name": "getBandColor",
             "params": [
@@ -459,7 +1044,19 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 225,
+            "line": 223,
+            "itemtype": "method",
+            "name": "getBands",
+            "return": {
+                "description": "an array of currently set colors with zero-based positions",
+                "type": "Array"
+            },
+            "class": "Resistor",
+            "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.model.js",
+            "line": 231,
             "itemtype": "method",
             "name": "unsetBand",
             "params": [
@@ -474,10 +1071,50 @@
         },
         {
             "file": "js/resistor.model.js",
-            "line": 236,
+            "line": 249,
             "description": "Clear all resistor colors",
             "itemtype": "method",
             "name": "clear",
+            "class": "Resistor",
+            "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.model.js",
+            "line": 258,
+            "description": "Get an array of forbidden colors given a position",
+            "itemtype": "method",
+            "name": "getForbiddenColors",
+            "params": [
+                {
+                    "name": "position",
+                    "description": "the position where we want to add a color",
+                    "type": "Integer"
+                }
+            ],
+            "return": {
+                "description": "an array containing all forbidden colors given the position",
+                "type": "Array"
+            },
+            "class": "Resistor",
+            "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.model.js",
+            "line": 268,
+            "description": "get an array of forbidden positions given a color",
+            "itemtype": "method",
+            "name": "getForbiddenPositions",
+            "params": [
+                {
+                    "name": "color",
+                    "description": "the color we want to add",
+                    "type": "Color"
+                }
+            ],
+            "return": {
+                "description": "an array containing all forbidden positions given the color",
+                "type": "Array"
+            },
             "class": "Resistor",
             "module": "resistor.model"
         }
@@ -485,7 +1122,7 @@
     "warnings": [
         {
             "message": "Missing item type",
-            "line": " js/helper.colorset.js:78"
+            "line": " js/helper.colorset.js:79"
         }
     ]
 }

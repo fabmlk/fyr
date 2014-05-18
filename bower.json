@@ -19,6 +19,11 @@
   "dependencies": {
     "requirejs": "~2.1.11",
     "jquery-mobile-bower": "~1.4.2",
-    "domready": "~1.0.5"
+    "domready": "~1.0.5",
+    "text": "~2.0.12",
+    "draggabilly.pkgd": "http://draggabilly.desandro.com/draggabilly.pkgd.js"
+  },
+  "devDependencies": {
+    "jasmine-jquery": "1.7.0"
   }
 }

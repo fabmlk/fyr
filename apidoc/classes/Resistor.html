@@ -43,15 +43,31 @@
             
                 <li><a href="../classes/Automaton.html">Automaton</a></li>
             
+                <li><a href="../classes/BandsView.html">BandsView</a></li>
+            
+                <li><a href="../classes/BandView.html">BandView</a></li>
+            
+                <li><a href="../classes/ColorSet.html">ColorSet</a></li>
+            
+                <li><a href="../classes/Controller.html">Controller</a></li>
+            
                 <li><a href="../classes/Resistor.html">Resistor</a></li>
+            
+                <li><a href="../classes/ResultView.html">ResultView</a></li>
             
             </ul>
 
             <ul id="api-modules" class="apis modules">
             
-                <li><a href="../modules/automaton.model.html">automaton.model</a></li>
+                <li><a href="../modules/helper.automaton.html">helper.automaton</a></li>
             
-                <li><a href="../modules/color.helper.html">color.helper</a></li>
+                <li><a href="../modules/helper.bandsview.html">helper.bandsview</a></li>
+            
+                <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
+            
+                <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
             
                 <li><a href="../modules/resistor.model.html">resistor.model</a></li>
             
@@ -98,7 +114,7 @@
 
     
         <div class="foundat">
-            Defined in: <a href="../files/js_resistor.model.js.html#l114"><code>js&#x2F;resistor.model.js:114</code></a>
+            Defined in: <a href="../files/js_resistor.model.js.html#l105"><code>js&#x2F;resistor.model.js:105</code></a>
         </div>
     
 
@@ -163,7 +179,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l114"><code>js&#x2F;resistor.model.js:114</code></a>
+        <a href="../files/js_resistor.model.js.html#l105"><code>js&#x2F;resistor.model.js:105</code></a>
         
         </p>
 
@@ -253,6 +269,27 @@
                             </li>
                         
                             <li class="index-item method">
+                                <a href="#method_getBands">getBands</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getForbiddenColors">getForbiddenColors</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
+                                <a href="#method_getForbiddenPositions">getForbiddenPositions</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_getResistance">getResistance</a>
 
                                 
@@ -302,7 +339,7 @@
                     <ul class="index-list events">
                         
                             <li class="index-item event">
-                                <a href="#event_resistorcomplete">resistorcomplete</a>
+                                <a href="#event_EVENT_COMPLETE">EVENT_COMPLETE</a>
 
                                 
                                 
@@ -350,7 +387,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l236"><code>js&#x2F;resistor.model.js:236</code></a>
+        <a href="../files/js_resistor.model.js.html#l249"><code>js&#x2F;resistor.model.js:249</code></a>
         
         </p>
 
@@ -419,7 +456,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l216"><code>js&#x2F;resistor.model.js:216</code></a>
+        <a href="../files/js_resistor.model.js.html#l214"><code>js&#x2F;resistor.model.js:214</code></a>
         
         </p>
 
@@ -479,6 +516,292 @@
 </div>
 
                 
+                    <div id="method_getBands" class="method item">
+    <h3 class="name"><code>getBands</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/js_resistor.model.js.html#l223"><code>js&#x2F;resistor.model.js:223</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>an array of currently set colors with zero-based positions</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getForbiddenColors" class="method item">
+    <h3 class="name"><code>getForbiddenColors</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>position</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/js_resistor.model.js.html#l258"><code>js&#x2F;resistor.model.js:258</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Get an array of forbidden colors given a position</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">position</code>
+                        <span class="type">Integer</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>the position where we want to add a color</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>an array containing all forbidden colors given the position</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+                    <div id="method_getForbiddenPositions" class="method item">
+    <h3 class="name"><code>getForbiddenPositions</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>color</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Array</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/js_resistor.model.js.html#l268"><code>js&#x2F;resistor.model.js:268</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>get an array of forbidden positions given a color</p>
+
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">color</code>
+                        <span class="type">Color</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>the color we want to add</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Array</span>:
+                    
+                    <p>an array containing all forbidden positions given the color</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
                     <div id="method_getResistance" class="method item">
     <h3 class="name"><code>getResistance</code></h3>
 
@@ -515,7 +838,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l192"><code>js&#x2F;resistor.model.js:192</code></a>
+        <a href="../files/js_resistor.model.js.html#l190"><code>js&#x2F;resistor.model.js:190</code></a>
         
         </p>
 
@@ -526,7 +849,7 @@
     </div>
 
     <div class="description">
-        <p>Best not call this method manually, use the &#39;resistorcomplete&#39; event instead</p>
+        <p>Best not call this method directly, use the EVENT_COMPLETE event instead</p>
 
     </div>
 
@@ -588,7 +911,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l199"><code>js&#x2F;resistor.model.js:199</code></a>
+        <a href="../files/js_resistor.model.js.html#l197"><code>js&#x2F;resistor.model.js:197</code></a>
         
         </p>
 
@@ -599,7 +922,7 @@
     </div>
 
     <div class="description">
-        <p>Best not call this method manually, use the &#39;resistorcomplete&#39; event instead</p>
+        <p>Best not call this method directly, use the EVENT_COMPLETE event instead</p>
 
     </div>
 
@@ -661,7 +984,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l185"><code>js&#x2F;resistor.model.js:185</code></a>
+        <a href="../files/js_resistor.model.js.html#l183"><code>js&#x2F;resistor.model.js:183</code></a>
         
         </p>
 
@@ -672,7 +995,7 @@
     </div>
 
     <div class="description">
-        <p>Best not call this method manually, use the &#39;resistorcomplete&#39; event instead</p>
+        <p>Best not call this method directly, use the EVENT_COMPLETE event instead</p>
 
     </div>
 
@@ -746,7 +1069,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l206"><code>js&#x2F;resistor.model.js:206</code></a>
+        <a href="../files/js_resistor.model.js.html#l204"><code>js&#x2F;resistor.model.js:204</code></a>
         
         </p>
 
@@ -851,7 +1174,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l225"><code>js&#x2F;resistor.model.js:225</code></a>
+        <a href="../files/js_resistor.model.js.html#l231"><code>js&#x2F;resistor.model.js:231</code></a>
         
         </p>
 
@@ -909,8 +1232,8 @@
                 <h2 class="off-left">Events</h2>
 
                 
-                    <div id="event_resistorcomplete" class="events item">
-    <h3 class="name"><code>resistorcomplete</code></h3>
+                    <div id="event_EVENT_COMPLETE" class="events item">
+    <h3 class="name"><code>EVENT_COMPLETE</code></h3>
     <span class="type"></span>
 
     
@@ -932,7 +1255,7 @@
             
         
         
-        <a href="../files/js_resistor.model.js.html#l10"><code>js&#x2F;resistor.model.js:10</code></a>
+        <a href="../files/js_resistor.model.js.html#l116"><code>js&#x2F;resistor.model.js:116</code></a>
         
         </p>
 

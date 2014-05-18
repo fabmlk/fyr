@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner</title>
+
+  
+  <link rel="stylesheet" type="text/css" href=".grunt/grunt-contrib-jasmine/jasmine.css">
+  
+
+  <script src=".grunt/grunt-contrib-jasmine/require.js"></script>
+  <script>
+    require.onError = function(error) {
+      var message = error.requireType + ': ';
+      if (error.requireType === 'scripterror' || error.requireType === 'notloaded' && error.requireModules) {
+        message += 'Illegal path or script error: ' + '[\'' + error.requireModules.join("', '") + '\']';
+      } else {
+        message += error.message;
+      }
+
+      throw Error(message);
+    };
+  </script>
+
+  
+  
+  <script src=".grunt/grunt-contrib-jasmine/jasmine.js"></script>
+  
+  <script src=".grunt/grunt-contrib-jasmine/jasmine-html.js"></script>
+  
+  <script src="bower_components/jquery/jquery.js"></script>
+  
+  <script src="bower_components/jasmine-jquery/lib/jasmine-jquery.js"></script>
+  
+  <script src="spec/helpers/custommatchers.helper.js"></script>
+  
+  
+
+  <script>
+    
+
+    
+      require.config({
+  "baseUrl": "js",
+  "paths": {
+    "jquery-mobile": "../bower_components/jquery-mobile-bower/js/jquery.mobile-1.4.2",
+    "jquery": "../bower_components/jquery/jquery",
+    "pubsub": "../bower_components/pubsub-js/src/pubsub",
+    "draggabilly": "../bower_components/draggabilly.pkgd/draggabilly.pkgd",
+    "text": "../bower_components/text/text"
+  },
+  "shim": {
+    "jquery-mobile": [
+      "jquery"
+    ],
+    "pubsub": {
+      "exports": "PubSub"
+    }
+  }
+});
+    
+  </script>
+
+  <script>
+    function launchTest() {
+    require([
+      
+        
+        'app' ,
+      
+        
+        'exception' ,
+      
+        
+        'helper.automaton' ,
+      
+        
+        'helper.bandsview' ,
+      
+        
+        'helper.colorset' ,
+      
+        
+        'helper.resultview' ,
+      
+        
+        'resistor.controller' ,
+      
+        
+        'resistor.model' ,
+      
+        
+        'resistor.view' 
+      
+    ],
+    function(){
+      require(['spec/resistor.view.spec.js','.grunt/grunt-contrib-jasmine/reporter.js'], function(){
+        require(['.grunt/grunt-contrib-jasmine/jasmine-helper.js'], function(){
+          // good to go! Our tests should already be running.
+        })
+      })
+    }
+    )
+  }
+  </script>
+
+  
+  <script>
+  launchTest();
+  </script>
+  
+</head>
+<body>
+</body>
+</html>
