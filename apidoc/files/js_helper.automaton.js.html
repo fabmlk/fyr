@@ -51,6 +51,12 @@
             
                 <li><a href="../classes/Controller.html">Controller</a></li>
             
+                <li><a href="../classes/Draggable.html">Draggable</a></li>
+            
+                <li><a href="../classes/LoadingView.html">LoadingView</a></li>
+            
+                <li><a href="../classes/Octopart.html">Octopart</a></li>
+            
                 <li><a href="../classes/Resistor.html">Resistor</a></li>
             
                 <li><a href="../classes/ResultView.html">ResultView</a></li>
@@ -65,7 +71,13 @@
             
                 <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
             
+                <li><a href="../modules/helper.draggable.html">helper.draggable</a></li>
+            
+                <li><a href="../modules/helper.loadingView.html">helper.loadingView</a></li>
+            
                 <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/octopart.html">octopart</a></li>
             
                 <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
             
@@ -214,7 +226,7 @@ define([&quot;jquery&quot;, &quot;helper.colorset&quot;], function ($, ColorSet)
          * automaton&#x27;s acceptor for a given color&#x27;s position
          * @method acceptor
          * @param {Color} color the color
-         * @param {Integer} position the position
+         * @param {Number} position the position
          * @return {Boolean} true if state is not STATE_FORBIDDEN
          */
         this.acceptor = function (color, position) {
@@ -237,7 +249,7 @@ define([&quot;jquery&quot;, &quot;helper.colorset&quot;], function ($, ColorSet)
          * It doesn&#x27;t backtrack from a FORBIDDEN_STATE as an automaton is memory-less: it cannot know which insertion might have put it in a forbidden state
          * @method backtrack
          * @param {Color} color the color
-         * @param {Integer} position the position
+         * @param {Number} position the position
          */
         this.backtrack = function (color, position) {
             var bool;
@@ -262,7 +274,7 @@ define([&quot;jquery&quot;, &quot;helper.colorset&quot;], function ($, ColorSet)
         /**
          * provides the list of forbidden colors given a position
          * @method getForbiddenColors
-         * @param {Integer} position the position
+         * @param {Number} position the position
          * @return {Array} the list of forbidden colors
          */
         this.getForbiddenColors = function (position) {

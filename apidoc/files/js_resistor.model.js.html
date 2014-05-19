@@ -51,6 +51,12 @@
             
                 <li><a href="../classes/Controller.html">Controller</a></li>
             
+                <li><a href="../classes/Draggable.html">Draggable</a></li>
+            
+                <li><a href="../classes/LoadingView.html">LoadingView</a></li>
+            
+                <li><a href="../classes/Octopart.html">Octopart</a></li>
+            
                 <li><a href="../classes/Resistor.html">Resistor</a></li>
             
                 <li><a href="../classes/ResultView.html">ResultView</a></li>
@@ -65,7 +71,13 @@
             
                 <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
             
+                <li><a href="../modules/helper.draggable.html">helper.draggable</a></li>
+            
+                <li><a href="../modules/helper.loadingView.html">helper.loadingView</a></li>
+            
                 <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/octopart.html">octopart</a></li>
             
                 <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
             
@@ -260,7 +272,7 @@ define([&quot;jquery&quot;, &quot;pubsub&quot;, &quot;exception&quot;, &quot;hel
             isResistorComplete = function () {
                 var indexOfnull = bands.indexOf(null);
                 return (indexOfnull === -1 || indexOfnull &gt; 3) &amp;&amp; // range 1-4 set consecutively
-                    (!automaton.isSchemeBand5() || bands[4]);  // scheme band-4 or any =&gt; complete OR range 1-5 set =&gt; scheme band-5 =&gt; complete
+                    (!automaton.isSchemeBand5() || !!bands[4]);  // scheme band-4 or any =&gt; complete OR range 1-5 set =&gt; scheme band-5 =&gt; complete
             },
 
             publishCompleteEvent = function () {
@@ -317,7 +329,7 @@ define([&quot;jquery&quot;, &quot;pubsub&quot;, &quot;exception&quot;, &quot;hel
          * Sets color at given position
          * @method setBandColor
          * @param {Color} color the color to set
-         * @param {Integer} position the position
+         * @param {Number} position the position
          */
         this.setBandColor = function (color, position) {
             feedAutomaton(color, position);
@@ -325,7 +337,7 @@ define([&quot;jquery&quot;, &quot;pubsub&quot;, &quot;exception&quot;, &quot;hel
 
         /**
          * @method getBandColor
-         * @param {Integer} position the position containing the color
+         * @param {Number} position the position containing the color
          * @return {Color} the color currently set at given position
          */
         this.getBandColor = function (position) {
@@ -342,7 +354,7 @@ define([&quot;jquery&quot;, &quot;pubsub&quot;, &quot;exception&quot;, &quot;hel
 
         /**
          * @method unsetBand
-         * @param {Integer} position the position containing the color to unset
+         * @param {Number} position the position containing the color to unset
          */
         this.unsetBand = function (position) {
             if (position &lt; 1) {
@@ -370,7 +382,7 @@ define([&quot;jquery&quot;, &quot;pubsub&quot;, &quot;exception&quot;, &quot;hel
         /**
          * Get an array of forbidden colors given a position
          * @method getForbiddenColors
-         * @param {Integer} position the position where we want to add a color
+         * @param {Number} position the position where we want to add a color
          * @return {Array} an array containing all forbidden colors given the position
          */
         this.getForbiddenColors = function (position) {

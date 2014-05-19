@@ -51,6 +51,12 @@
             
                 <li><a href="../classes/Controller.html">Controller</a></li>
             
+                <li><a href="../classes/Draggable.html">Draggable</a></li>
+            
+                <li><a href="../classes/LoadingView.html">LoadingView</a></li>
+            
+                <li><a href="../classes/Octopart.html">Octopart</a></li>
+            
                 <li><a href="../classes/Resistor.html">Resistor</a></li>
             
                 <li><a href="../classes/ResultView.html">ResultView</a></li>
@@ -65,7 +71,13 @@
             
                 <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
             
+                <li><a href="../modules/helper.draggable.html">helper.draggable</a></li>
+            
+                <li><a href="../modules/helper.loadingView.html">helper.loadingView</a></li>
+            
                 <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/octopart.html">octopart</a></li>
             
                 <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
             
@@ -117,7 +129,7 @@
 define(function () {
     &quot;use strict&quot;;
 
-    var ohmChar = &quot;\u2126&quot;;
+    var ohmSymbol = &quot;\u2126&quot;;
 
     function stringifyResistance(resistance) {
         var zeroes = String(resistance).split(&#x27;0&#x27;).length - 1,
@@ -131,7 +143,7 @@ define(function () {
         } else {
             res = String(resistance).slice(0, -9) + &#x27; G&#x27;;
         }
-        return res + ohmChar;
+        return res + ohmSymbol;
     }
 
     function stringifyTolerance(tolerance) {
@@ -149,21 +161,15 @@ define(function () {
      * @param {jQuery Object} $btnFind the jquery object of the button &quot;Find&quot;
      */
     return function ($this, $btnFind) {
-        var off = function () {
-                $this.html(&quot;0 &quot; + ohmChar);
-                $btnFind.button(&quot;disable&quot;);
-            };
-
-        off(); // init at off
 
         /**
          * Display the formated result and enable &#x27;find&#x27; button
-         * @method on
+         * @method show
          * @param {Integer} resistance the calculated resistance
          * @param {Integer} tolerance the calculated tolerance
          * @param {Integer} [temperature] the calculated temperature
          */
-        this.on = function (resistance, tolerance, temperature) {
+        this.show = function (resistance, tolerance, temperature) {
             var html = &quot;&quot;;
             html += stringifyResistance(resistance);
             html += &quot; &quot; + stringifyTolerance(tolerance);
@@ -173,10 +179,13 @@ define(function () {
         };
 
         /**
-         * Reset result to 0 ohm and disable &#x27;find&#x27; button
-         * @method off
+         * Display result to 0 ohm and disable &#x27;find&#x27; button
+         * @method hide
          */
-        this.off = off;
+        this.hide = function () {
+            $this.html(&quot;0 &quot; + ohmSymbol);
+            $btnFind.button(&quot;disable&quot;);
+        };
     };
 });
 

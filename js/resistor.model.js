@@ -148,7 +148,7 @@ define(["jquery", "pubsub", "exception", "helper.automaton", "helper.colorset"],
             isResistorComplete = function () {
                 var indexOfnull = bands.indexOf(null);
                 return (indexOfnull === -1 || indexOfnull > 3) && // range 1-4 set consecutively
-                    (!automaton.isSchemeBand5() || bands[4]);  // scheme band-4 or any => complete OR range 1-5 set => scheme band-5 => complete
+                    (!automaton.isSchemeBand5() || !!bands[4]);  // scheme band-4 or any => complete OR range 1-5 set => scheme band-5 => complete
             },
 
             publishCompleteEvent = function () {

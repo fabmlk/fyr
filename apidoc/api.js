@@ -6,6 +6,9 @@ YUI.add("yuidoc-meta", function(Y) {
         "BandsView",
         "ColorSet",
         "Controller",
+        "Draggable",
+        "LoadingView",
+        "Octopart",
         "Resistor",
         "ResultView"
     ],
@@ -13,7 +16,10 @@ YUI.add("yuidoc-meta", function(Y) {
         "helper.automaton",
         "helper.bandsview",
         "helper.colorset",
+        "helper.draggable",
+        "helper.loadingView",
         "helper.resultview",
+        "octopart",
         "resistor.controller",
         "resistor.model"
     ],
@@ -34,9 +40,24 @@ YUI.add("yuidoc-meta", function(Y) {
             "description": "Defines the color range helper for a resistor with its 12 authorized values"
         },
         {
+            "displayName": "helper.draggable",
+            "name": "helper.draggable",
+            "description": "Defines a draggable helper around the activation/deactivation of dragging a band"
+        },
+        {
+            "displayName": "helper.loadingView",
+            "name": "helper.loadingView",
+            "description": "Defines a view for a loading widget"
+        },
+        {
             "displayName": "helper.resultview",
             "name": "helper.resultview",
             "description": "Helper to represent the view of the result to display from a calculated resistor"
+        },
+        {
+            "displayName": "octopart",
+            "name": "octopart",
+            "description": "Defines interactions with octopart api and its view"
         },
         {
             "displayName": "resistor.controller",

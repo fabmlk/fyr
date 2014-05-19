@@ -1,32 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>js/octopart.js</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title=""></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: </em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/Automaton.html">Automaton</a></li>
+            
+                <li><a href="../classes/BandsView.html">BandsView</a></li>
+            
+                <li><a href="../classes/BandView.html">BandView</a></li>
+            
+                <li><a href="../classes/ColorSet.html">ColorSet</a></li>
+            
+                <li><a href="../classes/Controller.html">Controller</a></li>
+            
+                <li><a href="../classes/Draggable.html">Draggable</a></li>
+            
+                <li><a href="../classes/LoadingView.html">LoadingView</a></li>
+            
+                <li><a href="../classes/Octopart.html">Octopart</a></li>
+            
+                <li><a href="../classes/Resistor.html">Resistor</a></li>
+            
+                <li><a href="../classes/ResultView.html">ResultView</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/helper.automaton.html">helper.automaton</a></li>
+            
+                <li><a href="../modules/helper.bandsview.html">helper.bandsview</a></li>
+            
+                <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
+            
+                <li><a href="../modules/helper.draggable.html">helper.draggable</a></li>
+            
+                <li><a href="../modules/helper.loadingView.html">helper.loadingView</a></li>
+            
+                <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/octopart.html">octopart</a></li>
+            
+                <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
+            
+                <li><a href="../modules/resistor.model.html">resistor.model</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: js/octopart.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
 /**
  * Defines interactions with octopart api and its view
  * @module octopart
  */
-define(["jquery", "jquery-mobile"], function ($) {
-    "use strict";
+define([&quot;jquery&quot;, &quot;jquery-mobile&quot;], function ($) {
+    &quot;use strict&quot;;
 
     // trick: using the octopart search page is easier to find the right url params:
-    // example search page: http://octopart.com/partsearch#!?q=&filter[fields][specs.mounting_style.value][]=Through%20Hole&start=0&limit=10&filter[fields][specs.resistance_tolerance.value][]=%C2%B15%25&filter[fields][specs.pin_count.value][]=2&filter[fields][specs.resistance.value][]=20000&filter[fields][offers.seller.name][]=Digi-Key
-    var apikey = "dcaf9eef",
-        // JSONP pitfall: we cannot use JSONP directly with requirejs, remember that JSONP add a <script> tag to the header
+    // example search page: http://octopart.com/partsearch#!?q=&amp;filter[fields][specs.mounting_style.value][]=Through%20Hole&amp;start=0&amp;limit=10&amp;filter[fields][specs.resistance_tolerance.value][]=%C2%B15%25&amp;filter[fields][specs.pin_count.value][]=2&amp;filter[fields][specs.resistance.value][]=20000&amp;filter[fields][offers.seller.name][]=Digi-Key
+    var apikey = &quot;dcaf9eef&quot;,
+        // JSONP pitfall: we cannot use JSONP directly with requirejs, remember that JSONP add a &lt;script&gt; tag to the header
         // and call a function expected to be defined globally for it to find: better not use globals with requirejs!
         // Neither should we use $.getJSON() nor $.ajax().
-        // Instead use requirejs JSONP support by specifying a URL as dependency and "define" as the callback
-        baseUrl = 'http://octopart.com/api/v3/parts/search?apikey=' + apikey + '&callback=define&include[]=imagesets',
+        // Instead use requirejs JSONP support by specifying a URL as dependency and &quot;define&quot; as the callback
+        baseUrl = &#x27;http://octopart.com/api/v3/parts/search?apikey=&#x27; + apikey + &#x27;&amp;callback=define&amp;include[]=imagesets&#x27;,
 
         // builder octopart filter url
         filter = function (param, value) {
-            return "&filter[fields][" + param + "][]=" + value;
+            return &quot;&amp;filter[fields][&quot; + param + &quot;][]=&quot; + value;
         },
 
         // helper to the octopart url params
         octopartFilter = {
-            distributor: "offers.seller.name",
-            mounting: "specs.mounting_style.value", // mounting type
-            temperature: "specs.temperature_coefficient.value", // temperature value
-            terminations: "specs.pin_count.value", // number of pins = number of terminations
-            tolerance: "specs.resistance_tolerance.value",
-            resistance: "specs.resistance.value"
+            distributor: &quot;offers.seller.name&quot;,
+            mounting: &quot;specs.mounting_style.value&quot;, // mounting type
+            temperature: &quot;specs.temperature_coefficient.value&quot;, // temperature value
+            terminations: &quot;specs.pin_count.value&quot;, // number of pins = number of terminations
+            tolerance: &quot;specs.resistance_tolerance.value&quot;,
+            resistance: &quot;specs.resistance.value&quot;
         },
 
         // if no results are found for a given resistor value, try with the range percantage rule up to this limit
@@ -46,8 +170,8 @@ define(["jquery", "jquery-mobile"], function ($) {
         var self = this;
 
         // init jqm widgets
-        $datapage.find(":jqmData(role='listview')").listview();
-        $detailspage.find(":jqmData(role='listview')").listview();
+        $datapage.find(&quot;:jqmData(role=&#x27;listview&#x27;)&quot;).listview();
+        $detailspage.find(&quot;:jqmData(role=&#x27;listview&#x27;)&quot;).listview();
         //$datapage.pagecontainer();
         //$detailspage.pagecontainer();
 
@@ -73,26 +197,26 @@ define(["jquery", "jquery-mobile"], function ($) {
                     if (prices.EUR) {
                         return {
                             pricesArray: prices.EUR,
-                            symbol: '\u20AC' // €
+                            symbol: &#x27;\u20AC&#x27; // €
                         };
                     }
                     if (prices.USD) {
                         return {
                             pricesArray: prices.USD,
-                            symbol: '$'
+                            symbol: &#x27;$&#x27;
                         };
                     }
                     if (prices.GBP) {
                         return {
                             pricesArray: prices.GBP,
-                            symbol: '\u20A4' // sterling
+                            symbol: &#x27;\u20A4&#x27; // sterling
                         };
                     }
                     keys = Object.keys(prices);
                     // if some less-known foreign currency only available, get the 1st one and its 3-letter symbol name
                     return {
                         pricesArray: prices[keys[0]],
-                        symbol: " " + keys[0]
+                        symbol: &quot; &quot; + keys[0]
                     };
                 },
 
@@ -106,28 +230,28 @@ define(["jquery", "jquery-mobile"], function ($) {
                     return {
                         offers: res.item.offers.filter(function (offer) {
                             nbOffersInStock += offer.in_stock_quantity || 0;
-                            return offer.in_stock_quantity > 0;
+                            return offer.in_stock_quantity &gt; 0;
                         }),
-                        total_stock: nbOffersInStock || "Non indiqué"
+                        total_stock: nbOffersInStock || &quot;Non indiqué&quot;
                     };
                 };
 
             // the parsing loop
             $.each(results.results, function (i, res) {
                 var item = {},
-                    // octopart "in stock" filter does not work well for these: filter manually
+                    // octopart &quot;in stock&quot; filter does not work well for these: filter manually
                     offersInStock = getOffersWithStock(res);
 
-                if (offersInStock.offers.length > 0) { // no offers in stock available
-                    item.title = res.item.manufacturer.name + " " + res.item.mpn;
+                if (offersInStock.offers.length &gt; 0) { // no offers in stock available
+                    item.title = res.item.manufacturer.name + &quot; &quot; + res.item.mpn;
                     item.total_stock = offersInStock.total_stock;
-                    item.image = (((res.item.imagesets || {})[0] || {}).small_image || {}).url || "/img/no-photo-available.jpg";
+                    item.image = (((res.item.imagesets || {})[0] || {}).small_image || {}).url || &quot;img/no-photo-available.jpg&quot;;
 
                     item.offers = [];
                     $.each(offersInStock.offers, function (i, offer) {
                         var currencyOffers = getCurrencyOffers(offer.prices);
                         item.offers.push({
-                            seller: (offer.seller || {}).name || "Inconnu",
+                            seller: (offer.seller || {}).name || &quot;Inconnu&quot;,
                             url: offer.product_url,
                             // watch out! pricesArray can be undefined: make it be an empty Array
                             prices: (currencyOffers.pricesArray || []).map(function (price) {
@@ -136,7 +260,7 @@ define(["jquery", "jquery-mobile"], function ($) {
                                     price: formatPriceString(price[1], currencyOffers.symbol)
                                 };
                             }),
-                            stock: offer.in_stock_quantity || "Non indiqué"
+                            stock: offer.in_stock_quantity || &quot;Non indiqué&quot;
                         });
                     });
                     // add item data
@@ -157,7 +281,7 @@ define(["jquery", "jquery-mobile"], function ($) {
          *      2- if 1 not enough, enlarge resistor range values with RANGE_PERCENTAGE - retry
          *      3- remove temperature value anyway
          * This is performed in 3 steps as it is the limit of allowed octopart requests per second. We could decide to make more attemps by retrying after
-         * a setTimeout > 1s but filters enhancement from the 2 other requests should be enough.
+         * a setTimeout &gt; 1s but filters enhancement from the 2 other requests should be enough.
          * @method fetchRaw
          * @param {String} url the raw octopart url
          * @return {Promise} the promise representing the requested url
@@ -170,26 +294,26 @@ define(["jquery", "jquery-mobile"], function ($) {
                     // TO DO: add some guard tests in those function if url is incorrect
                         // remove a filter and its value from the url
                     var removeFromUrl = function (filter) {
-                            return url.replace(new RegExp("&filter\\[fields\\]\\[" + filter + "\\]\\[\\]=[^&]*"), "");
+                            return url.replace(new RegExp(&quot;&amp;filter\\[fields\\]\\[&quot; + filter + &quot;\\]\\[\\]=[^&amp;]*&quot;), &quot;&quot;);
                         },
                         // returns the value matched by a filter
                         getValueFromUrl = function (filter) {
-                            return new RegExp("\\[" + filter + "\\]\\[\\]=([^&]*)").exec(url)[1]; // the actual match is #1
+                            return new RegExp(&quot;\\[&quot; + filter + &quot;\\]\\[\\]=([^&amp;]*)&quot;).exec(url)[1]; // the actual match is #1
                         },
                         // returns a new url parsed with modified value for the given filter
                         replaceInUrl = function (url, filter, value) {
-                            return url.replace(new RegExp("(\\[" + filter + "\\]\\[\\])=[^&]*"), "$1=" + value);
+                            return url.replace(new RegExp(&quot;(\\[&quot; + filter + &quot;\\]\\[\\])=[^&amp;]*&quot;), &quot;$1=&quot; + value);
                         },
                         // converts a single value resistance in its corresponding string range version with RANGE_PERCENTAGE rule applied
                         enlargeResistanceRange = function () {
                             var floated = parseFloat(getValueFromUrl(octopartFilter.resistance));
-                            return '[' + (floated - floated * RANGE_PERCENTAGE) + " TO " + (floated + floated * RANGE_PERCENTAGE) + ']';
+                            return &#x27;[&#x27; + (floated - floated * RANGE_PERCENTAGE) + &quot; TO &quot; + (floated + floated * RANGE_PERCENTAGE) + &#x27;]&#x27;;
                         };
 
                     // fetch JSONP url
                     require([url], function (results) {
                         if (results.hits === 0) {// no results found
-                            if (nbFetchAttempts < MAX_FETCH_ATTEMPTS) { // attemps remaining: enlarge again
+                            if (nbFetchAttempts &lt; MAX_FETCH_ATTEMPTS) { // attemps remaining: enlarge again
                                 nbFetchAttempts += 1;
                                 switch (nbFetchAttempts) {
                                 case 1:
@@ -236,17 +360,17 @@ define(["jquery", "jquery-mobile"], function ($) {
         this.fetch = function (params) {
             var url,
                 formatSingleOrRange = function (value) {
-                    return value instanceof Array ? '[' + value[0] + " TO " + value[1] + ']' : value;
+                    return value instanceof Array ? &#x27;[&#x27; + value[0] + &quot; TO &quot; + value[1] + &#x27;]&#x27; : value;
                 };
 
-            url = baseUrl + filter(octopartFilter.tolerance, "%C2%B1" + (params.tolerance || 0) + "%25");
+            url = baseUrl + filter(octopartFilter.tolerance, &quot;%C2%B1&quot; + (params.tolerance || 0) + &quot;%25&quot;);
             url += filter(octopartFilter.resistance, formatSingleOrRange(params.resistance) || 0);
             if (params.temperature) {
                 url += filter(octopartFilter.temperature, formatSingleOrRange(params.temperature));
             }
             if (params.filter) {
                 if (params.filter.throughHole) {
-                    url += filter(octopartFilter.mounting, "Through%20Hole");
+                    url += filter(octopartFilter.mounting, &quot;Through%20Hole&quot;);
                 }
                 if (params.filter.terminations) {
                     url += filter(octopartFilter.terminations, params.filter.terminations);
@@ -264,19 +388,19 @@ define(["jquery", "jquery-mobile"], function ($) {
          * @method dataToListviews
          * @param {Object} data the parsed data
          * @return {Object} an object with the following properties:
-         * @param {jQuery} jquery.items: a jquery collection with each item wrapped in <li> tags.
-         * @param {Array} jquery.offers: an array whose elements are a jquery collection with each offer in <li> tags.
+         * @param {jQuery} jquery.items: a jquery collection with each item wrapped in &lt;li&gt; tags.
+         * @param {Array} jquery.offers: an array whose elements are a jquery collection with each offer in &lt;li&gt; tags.
          */
         this.dataToListviews = function (data) {
             var html$Items = [], html$Offers = [];
             $.each(data, function (itemIndex, item) {
-                html$Items.push($("<li ><a href='#detailspage'><img src='" + item.image + "' ></img>" + item.title + "<span class='ui-li-count'>" + item.total_stock + "</span></a></li>"));
+                html$Items.push($(&quot;&lt;li &gt;&lt;a href=&#x27;#detailspage&#x27;&gt;&lt;img src=&#x27;&quot; + item.image + &quot;&#x27; &gt;&lt;/img&gt;&quot; + item.title + &quot;&lt;span class=&#x27;ui-li-count&#x27;&gt;&quot; + item.total_stock + &quot;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&quot;));
                 html$Offers[itemIndex] = [];
                 $.each(item.offers, function (i, offer) {
-                    html$Offers[itemIndex].push($("<li data-role='list-divider'><a href='" + offer.url + "' data-role='button'>" + offer.seller + "</a><span class='ui-li-aside'>En stock: " + offer.stock + "</span></li>"));
+                    html$Offers[itemIndex].push($(&quot;&lt;li data-role=&#x27;list-divider&#x27;&gt;&lt;a href=&#x27;&quot; + offer.url + &quot;&#x27; data-role=&#x27;button&#x27;&gt;&quot; + offer.seller + &quot;&lt;/a&gt;&lt;span class=&#x27;ui-li-aside&#x27;&gt;En stock: &quot; + offer.stock + &quot;&lt;/span&gt;&lt;/li&gt;&quot;));
                     $.each(offer.prices, function (i, pricelot) {
-                        // all is strings here, but for lot plural js cleverly casts a string into and int when using < > operators
-                        html$Offers[itemIndex].push($("<li>" + pricelot.lot + " pièce" + (pricelot.lot > 1 ? "s" : "") +  "<span class='ui-li-aside'>" + pricelot.price + "</span></li>"));
+                        // all is strings here, but for lot plural js cleverly casts a string into and int when using &lt; &gt; operators
+                        html$Offers[itemIndex].push($(&quot;&lt;li&gt;&quot; + pricelot.lot + &quot; pièce&quot; + (pricelot.lot &gt; 1 ? &quot;s&quot; : &quot;&quot;) +  &quot;&lt;span class=&#x27;ui-li-aside&#x27;&gt;&quot; + pricelot.price + &quot;&lt;/span&gt;&lt;/li&gt;&quot;));
                     });
                 });
             });
@@ -296,21 +420,21 @@ define(["jquery", "jquery-mobile"], function ($) {
         this.display = function (data) {
             var listviews, msg;
             if (!data) { // no results found
-                msg = "<h1>Aucune données en stock ne correspondent à votre resistance.</h1>";
-                msg += "<p>Suggestion: cette version suppose que les resistances recherchées sont optimisées pour des circuits électriques basiques.</p>";
-                msg += "<p>Ainsi, certaines valeurs trop hautes ou avec coefficient de temperature (type 6 bandes) ne renvoient typiquement aucun résultats.</p>";
-                this.displayRaw($datapage, "Désolé", $("<li data-icon='info'>" + msg + "</li>"));
+                msg = &quot;&lt;h1&gt;Aucune données en stock ne correspondent à votre resistance.&lt;/h1&gt;&quot;;
+                msg += &quot;&lt;p&gt;Suggestion: cette version suppose que les resistances recherchées sont optimisées pour des circuits électriques basiques.&lt;/p&gt;&quot;;
+                msg += &quot;&lt;p&gt;Ainsi, certaines valeurs trop hautes ou avec coefficient de temperature (type 6 bandes) ne renvoient typiquement aucun résultats.&lt;/p&gt;&quot;;
+                this.displayRaw($datapage, &quot;Désolé&quot;, $(&quot;&lt;li data-icon=&#x27;info&#x27;&gt;&quot; + msg + &quot;&lt;/li&gt;&quot;));
             } else {
                 listviews = this.dataToListviews(data);
-                $(listviews.items).on("tap", function () {
+                $(listviews.items).on(&quot;tap&quot;, function () {
                     var $item = $(this);
-                    $.mobile.pageContainer.one("pagecontainerbeforeshow", function () {
-                        self.displayRaw($detailspage, $item.children('a').text(), listviews.offers[$item.index()]);
-                    }).one("pagecontainerbeforehide", function () {
+                    $.mobile.pageContainer.one(&quot;pagecontainerbeforeshow&quot;, function () {
+                        self.displayRaw($detailspage, $item.children(&#x27;a&#x27;).text(), listviews.offers[$item.index()]);
+                    }).one(&quot;pagecontainerbeforehide&quot;, function () {
                         self.displayRaw($detailspage); // erase html content here
                     });
                 });
-                this.displayRaw($datapage, data.length + " gammes trouvées", listviews.items);
+                this.displayRaw($datapage, data.length + &quot; gammes trouvées&quot;, listviews.items);
             }
         };
 
@@ -322,11 +446,31 @@ define(["jquery", "jquery-mobile"], function ($) {
          * @param {jQuery} $content the jquery content to insert in the listview
          */
         this.displayRaw = function ($where, headerText, $content) {
-            var $header = $where.find(":jqmData(role='header') > h1"),
-                $listview = $where.find(":jqmData(role='listview')");
+            var $header = $where.find(&quot;:jqmData(role=&#x27;header&#x27;) &gt; h1&quot;),
+                $listview = $where.find(&quot;:jqmData(role=&#x27;listview&#x27;)&quot;);
             $header.text(headerText);
             $listview.html($content);
-            $listview.listview("refresh");
+            $listview.listview(&quot;refresh&quot;);
         };
     };
 });
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

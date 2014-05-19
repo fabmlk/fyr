@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>helper.automaton</title>
+    <title>js/helper.loadingview.js</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -118,50 +118,68 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1>helper.automaton Module</h1>
-<div class="box clearfix meta">
-    
+                        <h1 class="file-heading">File: js/helper.loadingview.js</h1>
 
-    
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * Defines a view for a loading widget
+ * @module helper.loadingView
+ */
+define(function () {
+    &quot;use strict&quot;;
 
-    
-        <div class="foundat">
-            Defined in: <a href="../files/js_helper.automaton.js.html#l83"><code>js&#x2F;helper.automaton.js:83</code></a>
-        </div>
-    
+    //Trick: as a deferred can be resolved only once, if it was previously resolved and the user wishes to navigate back and forth
+    //between pages without recalculating a new resistor value (aka getting a new deferred),
+    // we return a &quot;fake&quot; promise with a done() and state() method so it can pass the tests in the on() method
+    var fakeResolvedPromise = {
+        done: function (fn) {
+            fn();
+        },
+        state: function () {
+            return &quot;resolved&quot;;
+        }
+    };
 
-    
-</div>
+    /**
+     * @class LoadingView
+     * @constructor
+     * @param {jQuery Object} $el the element to which we bind the loader
+     */
+    return function () {
+        /**
+         * When passing a promise, the loading widget will show until the promise has been resolved.
+         * @method on
+         * @param {Promise} [promise] the promise object
+         * @return {Promise|undefined} the promise object if passed as param, else nothing
+         */
+        this.on = function (promise) {
+            if (promise) {
+                var self = this;
+                promise.done(function () {
+                    self.off();
+                    promise = fakeResolvedPromise;
+                });
+            }
+            if (!promise || (promise.state() !== &quot;resolved&quot; &amp;&amp; promise.state() !== &quot;rejected&quot;)) {
+                $.mobile.loading(&quot;show&quot;, {
+                    theme: &#x27;b&#x27;
+                });
+            }
+            return promise || null;
+        };
 
+        /**
+         * Hide the loading widget
+         * @method off
+         */
+        this.off = function () {
+            $.mobile.loading(&quot;hide&quot;);
+        };
+    };
+});
 
-
-<div class="box intro">
-    <p>module resistor uses this automaton/graph to detect invalid color schemes based on current resistor state</p>
-
-</div>
-
-
-
-<div class="yui3-g">
-    <div class="yui3-u-1-2">
-        
-            <p>This module provides the following classes:</p>
-
-            <ul class="module-classes">
-            
-                <li class="module-class">
-                    <a href="../classes/Automaton.html">
-                        Automaton
-                    </a>
-                </li>
-            
-            </ul>
-        
-    </div>
-
-    <div class="yui3-u-1-2">
-        
-    </div>
+    </pre>
 </div>
 
                     </div>

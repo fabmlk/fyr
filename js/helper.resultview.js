@@ -37,11 +37,6 @@ define(function () {
      * @param {jQuery Object} $btnFind the jquery object of the button "Find"
      */
     return function ($this, $btnFind) {
-        $btnFind.button({
-            disabled: true
-        }).pagecontainer({
-            defaults: true
-        });
 
         /**
          * Display the formated result and enable 'find' button
@@ -54,7 +49,7 @@ define(function () {
             var html = "";
             html += stringifyResistance(resistance);
             html += " " + stringifyTolerance(tolerance);
-            html += temperature ? ", " + stringifyTemperature(temperature) : "";
+            html += temperature ? ",<span class='nowrap'> " + stringifyTemperature(temperature) + "</span>" : ""; // other option for non-breaking text: html hyphen &#8209;
             $this.html(html);
             $btnFind.button("enable");
         };

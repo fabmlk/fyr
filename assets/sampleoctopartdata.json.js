@@ -1,6 +1,6 @@
 // Sample data for demo
 // Remember we are using requirejs: needs to be wrapped in a define call!
-//curl -g http://octopart.com/api/v3/parts/search?apikey=dcaf9eef&pretty_print=true&filter[fields][offers.seller.name][]=Digi-Key&filter[fields][specs.mounting_style.value][]=Through%20Hole&filter[fields][specs.pin_count.value][]=2&filter[fields][specs.resistance_tolerance.value][]=%C2%B15%25&filter[fields][specs.resistance.value][]=20000
+//curl -g http://octopart.com/api/v3/parts/search?apikey=dcaf9eef&include[]=imagesets&pretty_print=true&filter[fields][offers.seller.name][]=Digi-Key&filter[fields][specs.mounting_style.value][]=Through%20Hole&filter[fields][specs.pin_count.value][]=2&filter[fields][specs.resistance_tolerance.value][]=%C2%B15%25&filter[fields][specs.resistance.value][]=20000 define({
 define({
     "__class__": "SearchResponse",
     "facet_results": {
@@ -8,7 +8,7 @@ define({
         "queries": {}
     },
     "hits": 9,
-    "msec": 101,
+    "msec": 213,
     "request": {
         "__class__": "SearchRequest",
         "facet": {
@@ -52,6 +52,336 @@ define({
                     "name": "Ohmite",
                     "uid": "574996437b3e808e"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Allied Electronics",
+                                    "uid": "f9e13cebd0892a26"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18082091/image/Ohmite-20J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18082081/image/Ohmite-20J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/9565650/image/Ohmite-20J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "element14 APAC",
+                                    "uid": "cdc808c2c94e1e0f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-20J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-20J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-20J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Onlinecomponents.com",
+                                    "uid": "e3fd26f7c3e6303a"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": null,
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18021042/image/Ohmite-20J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17016906/image/Ohmite-20J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-20J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-20J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-20J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Farnell",
+                                    "uid": "58989d9272cd8b5f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-20J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-20J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-20J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/17981845/image/Ohmite-20J20KE.gif"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/472174/image/Ohmite-20J20KE.gif"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/868152/image/Ohmite-20J20KE.gif"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-20J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-20J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-20J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990682/image/Ohmite-20J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990663/image/Ohmite-20J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/8447158/image/Ohmite-20J20KE.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": "http://www.ohmite.com/",
@@ -229,7 +559,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -269,7 +599,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 644,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:48:21Z",
+                        "last_updated": "2014-05-18T13:15:18Z",
                         "moq": 25,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -313,7 +643,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 259,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T09:03:51Z",
+                        "last_updated": "2014-05-17T11:04:20Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -345,7 +675,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 560,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T08:16:08Z",
+                        "last_updated": "2014-05-17T12:16:05Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -413,7 +743,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 460,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T11:18:48Z",
+                        "last_updated": "2014-05-18T11:18:29Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -465,7 +795,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 404,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T08:30:53Z",
+                        "last_updated": "2014-05-16T08:32:32Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -517,7 +847,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:42:13Z",
+                        "last_updated": "2014-05-16T09:33:12Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -563,6 +893,294 @@ define({
                     "name": "Ohmite",
                     "uid": "574996437b3e808e"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "element14 APAC",
+                                    "uid": "cdc808c2c94e1e0f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701706/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701704/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701701/image/Ohmite-B12J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Farnell",
+                                    "uid": "58989d9272cd8b5f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701706/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701704/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701701/image/Ohmite-B12J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/17992582/image/Ohmite-B12J20KE.gif"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/472259/image/Ohmite-B12J20KE.gif"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/879346/image/Ohmite-B12J20KE.gif"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Onlinecomponents.com",
+                                    "uid": "e3fd26f7c3e6303a"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": null,
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17981725/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/12636474/image/Ohmite-B12J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701706/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701704/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701701/image/Ohmite-B12J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Allied Electronics",
+                                    "uid": "f9e13cebd0892a26"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18117218/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18117202/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/9569489/image/Ohmite-B12J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18057039/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18057019/image/Ohmite-B12J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/8450053/image/Ohmite-B12J20KE.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": "http://www.ohmite.com/",
@@ -720,7 +1338,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 115,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -808,7 +1426,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 80,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T09:03:51Z",
+                        "last_updated": "2014-05-17T11:04:20Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -840,7 +1458,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 50,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T11:18:48Z",
+                        "last_updated": "2014-05-18T11:18:29Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -888,7 +1506,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 44,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T08:30:53Z",
+                        "last_updated": "2014-05-16T08:32:32Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -936,7 +1554,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 12,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:42:13Z",
+                        "last_updated": "2014-05-16T09:33:12Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -972,7 +1590,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:48:21Z",
+                        "last_updated": "2014-05-18T13:15:18Z",
                         "moq": 50,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1016,7 +1634,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T08:16:08Z",
+                        "last_updated": "2014-05-17T12:16:05Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1087,6 +1705,336 @@ define({
                     "name": "Ohmite",
                     "uid": "574996437b3e808e"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Onlinecomponents.com",
+                                    "uid": "e3fd26f7c3e6303a"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": null,
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997798/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/12655000/image/Ohmite-OD203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Allied Electronics",
+                                    "uid": "f9e13cebd0892a26"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18123711/image/Ohmite-OD203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18123696/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/9566408/image/Ohmite-OD203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Farnell",
+                                    "uid": "58989d9272cd8b5f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OD203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OD203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OD203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OD203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "element14 APAC",
+                                    "uid": "cdc808c2c94e1e0f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OD203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OD203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17949606/image/Ohmite-OD203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/172420/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/835785/image/Ohmite-OD203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17949606/image/Ohmite-OD203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/172420/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/835785/image/Ohmite-OD203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OD203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OD203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OD203JE.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": "http://www.ohmite.com/",
@@ -1100,7 +2048,7 @@ define({
                         "__class__": "PartOffer",
                         "factory_lead_days": null,
                         "factory_order_multiple": null,
-                        "in_stock_quantity": 0,
+                        "in_stock_quantity": 300,
                         "is_authorized": true,
                         "last_updated": "2014-05-09T06:35:54Z",
                         "moq": 1,
@@ -1268,7 +2216,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 597,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1306,9 +2254,9 @@ define({
                         "__class__": "PartOffer",
                         "factory_lead_days": null,
                         "factory_order_multiple": null,
-                        "in_stock_quantity": 972,
+                        "in_stock_quantity": 922,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T09:03:51Z",
+                        "last_updated": "2014-05-17T11:04:20Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1340,7 +2288,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 750,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T11:18:48Z",
+                        "last_updated": "2014-05-18T11:18:29Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1396,7 +2344,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 660,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T08:30:53Z",
+                        "last_updated": "2014-05-16T08:32:32Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1452,7 +2400,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 593,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:42:13Z",
+                        "last_updated": "2014-05-16T09:33:12Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1488,7 +2436,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 350,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T08:16:08Z",
+                        "last_updated": "2014-05-17T12:16:05Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1520,7 +2468,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:48:21Z",
+                        "last_updated": "2014-05-18T13:15:18Z",
                         "moq": 100,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1640,7 +2588,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 61,
                         "is_authorized": false,
-                        "last_updated": "2014-05-15T21:04:20Z",
+                        "last_updated": "2014-05-17T21:04:21Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1690,6 +2638,336 @@ define({
                     "name": "Ohmite",
                     "uid": "574996437b3e808e"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Farnell",
+                                    "uid": "58989d9272cd8b5f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OF203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OF203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "element14 APAC",
+                                    "uid": "cdc808c2c94e1e0f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OF203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OF203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Onlinecomponents.com",
+                                    "uid": "e3fd26f7c3e6303a"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": null,
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997798/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/12655000/image/Ohmite-OF203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17949606/image/Ohmite-OF203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/172420/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/835785/image/Ohmite-OF203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OF203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OF203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Allied Electronics",
+                                    "uid": "f9e13cebd0892a26"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18103672/image/Ohmite-OF203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18103661/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/9563709/image/Ohmite-OF203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997779/image/Ohmite-OF203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17997761/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10050882/image/Ohmite-OF203JE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17949606/image/Ohmite-OF203JE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/172420/image/Ohmite-OF203JE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/835785/image/Ohmite-OF203JE.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": "http://www.ohmite.com/",
@@ -1867,11 +3145,51 @@ define({
                     },
                     {
                         "__class__": "PartOffer",
+                        "factory_lead_days": 42,
+                        "factory_order_multiple": null,
+                        "in_stock_quantity": 0,
+                        "is_authorized": true,
+                        "last_updated": "2014-05-17T14:00:00Z",
+                        "moq": 1,
+                        "octopart_rfq_url": null,
+                        "on_order_eta": null,
+                        "on_order_quantity": null,
+                        "order_multiple": null,
+                        "packaging": "Bulk",
+                        "prices": {
+                            "USD": [
+                                [
+                                    1,
+                                    "0.65000"
+                                ],
+                                [
+                                    100,
+                                    "0.53000"
+                                ],
+                                [
+                                    500,
+                                    "0.47000"
+                                ]
+                            ]
+                        },
+                        "product_url": "http://octopart-clicks.com/click/vptrack?ak=dcaf9eef&sig=0dc61b1&vpid=1519908",
+                        "seller": {
+                            "__class__": "Seller",
+                            "display_flag": "US",
+                            "has_ecommerce": true,
+                            "homepage_url": "http://www.digikey.com",
+                            "name": "Digi-Key",
+                            "uid": "2c3be9310496fffc"
+                        },
+                        "sku": "OF203JE-ND"
+                    },
+                    {
+                        "__class__": "PartOffer",
                         "factory_lead_days": 16,
                         "factory_order_multiple": null,
                         "in_stock_quantity": 800,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T11:18:48Z",
+                        "last_updated": "2014-05-18T11:18:29Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -1919,51 +3237,11 @@ define({
                     },
                     {
                         "__class__": "PartOffer",
-                        "factory_lead_days": 42,
-                        "factory_order_multiple": null,
-                        "in_stock_quantity": 0,
-                        "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
-                        "moq": 1,
-                        "octopart_rfq_url": null,
-                        "on_order_eta": null,
-                        "on_order_quantity": null,
-                        "order_multiple": null,
-                        "packaging": "Bulk",
-                        "prices": {
-                            "USD": [
-                                [
-                                    1,
-                                    "0.65000"
-                                ],
-                                [
-                                    100,
-                                    "0.53000"
-                                ],
-                                [
-                                    500,
-                                    "0.47000"
-                                ]
-                            ]
-                        },
-                        "product_url": "http://octopart-clicks.com/click/vptrack?ak=dcaf9eef&sig=0dc61b1&vpid=1519908",
-                        "seller": {
-                            "__class__": "Seller",
-                            "display_flag": "US",
-                            "has_ecommerce": true,
-                            "homepage_url": "http://www.digikey.com",
-                            "name": "Digi-Key",
-                            "uid": "2c3be9310496fffc"
-                        },
-                        "sku": "OF203JE-ND"
-                    },
-                    {
-                        "__class__": "PartOffer",
                         "factory_lead_days": null,
                         "factory_order_multiple": null,
                         "in_stock_quantity": 704,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T08:30:53Z",
+                        "last_updated": "2014-05-16T08:32:32Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2015,7 +3293,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 291,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T09:03:51Z",
+                        "last_updated": "2014-05-17T11:04:20Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2047,7 +3325,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 105,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:42:13Z",
+                        "last_updated": "2014-05-16T09:33:12Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2083,7 +3361,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:48:21Z",
+                        "last_updated": "2014-05-18T13:15:18Z",
                         "moq": 500,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2167,7 +3445,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T08:16:08Z",
+                        "last_updated": "2014-05-17T12:16:05Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2238,6 +3516,330 @@ define({
                     "name": "Ohmite",
                     "uid": "574996437b3e808e"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Allied Electronics",
+                                    "uid": "f9e13cebd0892a26"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18082091/image/Ohmite-25J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18082081/image/Ohmite-25J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/9565650/image/Ohmite-25J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-25J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-25J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-25J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/17981845/image/Ohmite-25J20KE.gif"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/472174/image/Ohmite-25J20KE.gif"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/868152/image/Ohmite-25J20KE.gif"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "element14 APAC",
+                                    "uid": "cdc808c2c94e1e0f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-25J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-25J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-25J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Farnell",
+                                    "uid": "58989d9272cd8b5f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-25J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-25J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-25J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": []
+                        },
+                        "large_image": null,
+                        "medium_image": null,
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18021042/image/Ohmite-25J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17016906/image/Ohmite-25J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990682/image/Ohmite-25J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990663/image/Ohmite-25J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/8447158/image/Ohmite-25J20KE.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990827/image/Ohmite-25J20KE.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17990810/image/Ohmite-25J20KE.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10049537/image/Ohmite-25J20KE.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": "http://www.ohmite.com/",
@@ -2415,7 +4017,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 380,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2455,7 +4057,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 870,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T08:16:08Z",
+                        "last_updated": "2014-05-17T12:16:05Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2485,9 +4087,9 @@ define({
                         "__class__": "PartOffer",
                         "factory_lead_days": null,
                         "factory_order_multiple": null,
-                        "in_stock_quantity": 289,
+                        "in_stock_quantity": 229,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T09:03:51Z",
+                        "last_updated": "2014-05-17T11:04:20Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2519,7 +4121,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 442,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:48:21Z",
+                        "last_updated": "2014-05-18T13:15:18Z",
                         "moq": 100,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2603,7 +4205,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 130,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T08:30:53Z",
+                        "last_updated": "2014-05-16T08:32:32Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2655,7 +4257,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 76,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:42:13Z",
+                        "last_updated": "2014-05-16T09:33:12Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2701,6 +4303,176 @@ define({
                     "name": "Dale",
                     "uid": "8abb4bb1a7bc5d7c"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Farnell",
+                                    "uid": "58989d9272cd8b5f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209280/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209274/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10195561/image/Vishay-CW00520K00JE73.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209280/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209274/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10195561/image/Vishay-CW00520K00JE73.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "element14 APAC",
+                                    "uid": "cdc808c2c94e1e0f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209280/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209274/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10195561/image/Vishay-CW00520K00JE73.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209280/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18209274/image/Vishay-CW00520K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10195561/image/Vishay-CW00520K00JE73.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": null,
@@ -2878,7 +4650,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 779,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2926,7 +4698,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 500,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 500,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -2978,7 +4750,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T10:49:11Z",
+                        "last_updated": "2014-05-16T10:23:38Z",
                         "moq": 500,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3014,7 +4786,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 219,
                         "is_authorized": true,
-                        "last_updated": "2014-05-16T09:03:51Z",
+                        "last_updated": "2014-05-17T11:04:20Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3094,7 +4866,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 300,
                         "is_authorized": false,
-                        "last_updated": "2014-05-15T21:04:20Z",
+                        "last_updated": "2014-05-17T21:04:21Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3148,6 +4920,260 @@ define({
                     "name": "Dale",
                     "uid": "8abb4bb1a7bc5d7c"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133196/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133187/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10048086/image/Vishay-CW01020K00JE73.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "element14 APAC",
+                                    "uid": "cdc808c2c94e1e0f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133196/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133187/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10048086/image/Vishay-CW01020K00JE73.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Farnell",
+                                    "uid": "58989d9272cd8b5f"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133196/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133187/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10048086/image/Vishay-CW01020K00JE73.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/18109789/image/Vishay-CW01020K00JE73.gif"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/472186/image/Vishay-CW01020K00JE73.gif"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/1009787/image/Vishay-CW01020K00JE73.gif"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133196/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133187/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/10048086/image/Vishay-CW01020K00JE73.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133137/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18133123/image/Vishay-CW01020K00JE73.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/8447368/image/Vishay-CW01020K00JE73.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": null,
@@ -3357,7 +5383,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T10:49:11Z",
+                        "last_updated": "2014-05-16T10:23:38Z",
                         "moq": 500,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3393,7 +5419,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 500,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3479,6 +5505,126 @@ define({
                     "name": "Ohmite",
                     "uid": "574996437b3e808e"
                 },
+                "imagesets": [
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/17992582/image/Ohmite-B12J20K.gif"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/472259/image/Ohmite-B12J20K.gif"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/gif",
+                            "url": "http://sigma.octopart.com/879346/image/Ohmite-B12J20K.gif"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Newark",
+                                    "uid": "d294179ef2900153"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701706/image/Ohmite-B12J20K.jpg"
+                        },
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701704/image/Ohmite-B12J20K.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/21701701/image/Ohmite-B12J20K.jpg"
+                        }
+                    },
+                    {
+                        "__class__": "ImageSet",
+                        "attribution": {
+                            "__class__": "Attribution",
+                            "first_acquired": null,
+                            "sources": [
+                                {
+                                    "__class__": "Source",
+                                    "name": "Onlinecomponents.com",
+                                    "uid": "e3fd26f7c3e6303a"
+                                }
+                            ]
+                        },
+                        "large_image": null,
+                        "medium_image": null,
+                        "small_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/18202612/image/Ohmite-B12J20K.jpg"
+                        },
+                        "swatch_image": {
+                            "__class__": "Asset",
+                            "metadata": {
+                                "height": null,
+                                "width": null
+                            },
+                            "mimetype": "image/jpg",
+                            "url": "http://sigma.octopart.com/17017181/image/Ohmite-B12J20K.jpg"
+                        }
+                    }
+                ],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": "http://www.ohmite.com/",
@@ -3542,7 +5688,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 50,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3574,7 +5720,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 1,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T11:18:48Z",
+                        "last_updated": "2014-05-18T11:18:29Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3610,7 +5756,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T09:48:21Z",
+                        "last_updated": "2014-05-18T13:15:18Z",
                         "moq": 50,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3654,7 +5800,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 32,
                         "is_authorized": false,
-                        "last_updated": "2014-05-15T21:04:20Z",
+                        "last_updated": "2014-05-17T21:04:21Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3694,7 +5840,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 13,
                         "is_authorized": false,
-                        "last_updated": "2014-05-15T10:07:45Z",
+                        "last_updated": "2014-05-16T10:33:09Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3726,7 +5872,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 6,
                         "is_authorized": false,
-                        "last_updated": "2014-05-15T16:18:39Z",
+                        "last_updated": "2014-05-16T15:39:12Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3794,7 +5940,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 17,
                         "is_authorized": false,
-                        "last_updated": "2014-05-15T19:35:29Z",
+                        "last_updated": "2014-05-16T16:47:54Z",
                         "moq": null,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3879,6 +6025,7 @@ define({
                     "name": "Dale",
                     "uid": "8abb4bb1a7bc5d7c"
                 },
+                "imagesets": [],
                 "manufacturer": {
                     "__class__": "Manufacturer",
                     "homepage_url": null,
@@ -3894,7 +6041,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T10:49:11Z",
+                        "last_updated": "2014-05-16T10:23:38Z",
                         "moq": 500,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3930,7 +6077,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 500,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,
@@ -3962,7 +6109,7 @@ define({
                         "factory_order_multiple": null,
                         "in_stock_quantity": 0,
                         "is_authorized": true,
-                        "last_updated": "2014-05-15T13:16:11Z",
+                        "last_updated": "2014-05-17T14:00:00Z",
                         "moq": 1,
                         "octopart_rfq_url": null,
                         "on_order_eta": null,

@@ -40,6 +40,28 @@
             "fors": {},
             "namespaces": {}
         },
+        "js/helper.draggable.js": {
+            "name": "js/helper.draggable.js",
+            "modules": {
+                "helper.draggable": 1
+            },
+            "classes": {
+                "Draggable": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/helper.loadingview.js": {
+            "name": "js/helper.loadingview.js",
+            "modules": {
+                "helper.loadingView": 1
+            },
+            "classes": {
+                "LoadingView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
         "js/helper.resultview.js": {
             "name": "js/helper.resultview.js",
             "modules": {
@@ -47,6 +69,17 @@
             },
             "classes": {
                 "ResultView": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/octopart.js": {
+            "name": "js/octopart.js",
+            "modules": {
+                "octopart": 1
+            },
+            "classes": {
+                "Octopart": 1
             },
             "fors": {},
             "namespaces": {}
@@ -70,6 +103,13 @@
             "classes": {
                 "Resistor": 1
             },
+            "fors": {},
+            "namespaces": {}
+        },
+        "js/resistor.view.js": {
+            "name": "js/resistor.view.js",
+            "modules": {},
+            "classes": {},
             "fors": {},
             "namespaces": {}
         }
@@ -99,7 +139,7 @@
             "namespaces": {},
             "tag": "module",
             "file": "js/helper.bandsview.js",
-            "line": 92,
+            "line": 94,
             "description": "Helper for managing the html view of the bands in the resistor.view\nOn top of improved code readability in the resistor.view, this level of abstraction permits to adjust the html code of the bands\nwihtout modifying its internal logic, i.e, as long as the bandsview is constructed with its bands set at the correct index in the page,\nwe might decide to add or remove wrappers around them without modifying neither the resistor.view code, nor this helper"
         },
         "helper.colorset": {
@@ -115,6 +155,32 @@
             "line": 1,
             "description": "Defines the color range helper for a resistor with its 12 authorized values"
         },
+        "helper.draggable": {
+            "name": "helper.draggable",
+            "submodules": {},
+            "classes": {
+                "Draggable": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js/helper.draggable.js",
+            "line": 41,
+            "description": "Defines a draggable helper around the activation/deactivation of dragging a band"
+        },
+        "helper.loadingView": {
+            "name": "helper.loadingView",
+            "submodules": {},
+            "classes": {
+                "LoadingView": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js/helper.loadingview.js",
+            "line": 20,
+            "description": "Defines a view for a loading widget"
+        },
         "helper.resultview": {
             "name": "helper.resultview",
             "submodules": {},
@@ -127,6 +193,19 @@
             "file": "js/helper.resultview.js",
             "line": 33,
             "description": "Helper to represent the view of the result to display from a calculated resistor"
+        },
+        "octopart": {
+            "name": "octopart",
+            "submodules": {},
+            "classes": {
+                "Octopart": 1
+            },
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "js/octopart.js",
+            "line": 39,
+            "description": "Defines interactions with octopart api and its view"
         },
         "resistor.controller": {
             "name": "resistor.controller",
@@ -209,7 +288,7 @@
             "module": "helper.bandsview",
             "namespace": "",
             "file": "js/helper.bandsview.js",
-            "line": 92,
+            "line": 94,
             "description": "Defines a BandsView: this is the view of the collection of bands in the page",
             "is_constructor": 1,
             "params": [
@@ -234,6 +313,42 @@
             "line": 1,
             "description": "Defines the color range helper for a resistor with its 12 authorized values"
         },
+        "Draggable": {
+            "name": "Draggable",
+            "shortname": "Draggable",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "helper.draggable",
+            "namespace": "",
+            "file": "js/helper.draggable.js",
+            "line": 41,
+            "description": "Wrapper helper around the mecanism of dragging a band",
+            "static": 1
+        },
+        "LoadingView": {
+            "name": "LoadingView",
+            "shortname": "LoadingView",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "helper.loadingView",
+            "namespace": "",
+            "file": "js/helper.loadingview.js",
+            "line": 20,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "$el",
+                    "description": "the element to which we bind the loader",
+                    "type": "JQuery Object"
+                }
+            ]
+        },
         "ResultView": {
             "name": "ResultView",
             "shortname": "ResultView",
@@ -257,6 +372,32 @@
                     "name": "$btnFind",
                     "description": "the jquery object of the button \"Find\"",
                     "type": "JQuery Object"
+                }
+            ]
+        },
+        "Octopart": {
+            "name": "Octopart",
+            "shortname": "Octopart",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "octopart",
+            "namespace": "",
+            "file": "js/octopart.js",
+            "line": 39,
+            "description": "Handles request, processing and view insertion of the octopart data to retrieve",
+            "params": [
+                {
+                    "name": "$datapage",
+                    "description": "the jquery object of the page to be displayed items data (2nd page)",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "$detailspage",
+                    "description": "the jquery object of the page to be displayed details and offers for an item (3rd page)",
+                    "type": "JQuery"
                 }
             ]
         },
@@ -323,7 +464,7 @@
                 {
                     "name": "position",
                     "description": "the position",
-                    "type": "Integer"
+                    "type": "Number"
                 }
             ],
             "return": {
@@ -348,7 +489,7 @@
                 {
                     "name": "position",
                     "description": "the position",
-                    "type": "Integer"
+                    "type": "Number"
                 }
             ],
             "class": "Automaton",
@@ -373,7 +514,7 @@
                 {
                     "name": "position",
                     "description": "the position",
-                    "type": "Integer"
+                    "type": "Number"
                 }
             ],
             "return": {
@@ -429,7 +570,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 25,
+            "line": 27,
             "description": "Set a color to the band",
             "itemtype": "method",
             "name": "set",
@@ -445,7 +586,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 34,
+            "line": 36,
             "description": "Unset a color from the band and triggers EVENT_UNSET_BAND event",
             "itemtype": "method",
             "name": "unset",
@@ -454,7 +595,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 43,
+            "line": 45,
             "description": "Gives focus to a band",
             "itemtype": "method",
             "name": "focus",
@@ -463,7 +604,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 51,
+            "line": 53,
             "description": "Remove focus from a band",
             "itemtype": "method",
             "name": "blur",
@@ -472,7 +613,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 59,
+            "line": 61,
             "itemtype": "method",
             "name": "hasFocus",
             "return": {
@@ -484,7 +625,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 67,
+            "line": 69,
             "itemtype": "method",
             "name": "getDraggabilly",
             "return": {
@@ -496,7 +637,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 75,
+            "line": 77,
             "itemtype": "method",
             "name": "index",
             "return": {
@@ -508,7 +649,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 83,
+            "line": 85,
             "description": "Instance to its jQuery band object",
             "itemtype": "property",
             "name": "$it",
@@ -518,7 +659,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 106,
+            "line": 108,
             "description": "Event triggered when a band has been unset",
             "itemtype": "event",
             "name": "EVENT_UNSET_BAND",
@@ -528,7 +669,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 113,
+            "line": 115,
             "itemtype": "method",
             "name": "getBand",
             "params": [
@@ -547,7 +688,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 128,
+            "line": 130,
             "itemtype": "method",
             "name": "arrayView",
             "return": {
@@ -559,7 +700,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 136,
+            "line": 138,
             "itemtype": "method",
             "name": "getFocused",
             "return": {
@@ -571,7 +712,7 @@
         },
         {
             "file": "js/helper.bandsview.js",
-            "line": 152,
+            "line": 154,
             "itemtype": "method",
             "name": "getNext",
             "params": [
@@ -719,11 +860,71 @@
             "module": "helper.colorset"
         },
         {
-            "file": "js/helper.resultview.js",
+            "file": "js/helper.draggable.js",
             "line": 47,
-            "description": "Display the formated result and enable 'find' button",
+            "itemtype": "method",
+            "name": "wrap",
+            "params": [
+                {
+                    "name": "band",
+                    "description": "the band to be activated dragging mecanisme",
+                    "type": "Object"
+                }
+            ],
+            "class": "Draggable",
+            "module": "helper.draggable"
+        },
+        {
+            "file": "js/helper.draggable.js",
+            "line": 55,
+            "itemtype": "method",
+            "name": "unwrap",
+            "params": [
+                {
+                    "name": "band",
+                    "description": "the band to be deactivated dragging mecanism",
+                    "type": "Object"
+                }
+            ],
+            "class": "Draggable",
+            "module": "helper.draggable"
+        },
+        {
+            "file": "js/helper.loadingview.js",
+            "line": 26,
+            "description": "When passing a promise, the loading widget will show until the promise has been resolved.",
             "itemtype": "method",
             "name": "on",
+            "params": [
+                {
+                    "name": "promise",
+                    "description": "the promise object",
+                    "type": "Promise",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "the promise object if passed as param, else nothing",
+                "type": "Promise|undefined"
+            },
+            "class": "LoadingView",
+            "module": "helper.loadingView"
+        },
+        {
+            "file": "js/helper.loadingview.js",
+            "line": 48,
+            "description": "Hide the loading widget",
+            "itemtype": "method",
+            "name": "off",
+            "class": "LoadingView",
+            "module": "helper.loadingView"
+        },
+        {
+            "file": "js/helper.resultview.js",
+            "line": 41,
+            "description": "Display the formated result and enable 'find' button",
+            "itemtype": "method",
+            "name": "show",
             "params": [
                 {
                     "name": "resistance",
@@ -747,12 +948,191 @@
         },
         {
             "file": "js/helper.resultview.js",
-            "line": 63,
-            "description": "Reset result to 0 ohm and disable 'find' button",
+            "line": 57,
+            "description": "Display result to 0 ohm and disable 'find' button",
             "itemtype": "method",
-            "name": "off",
+            "name": "hide",
             "class": "ResultView",
             "module": "helper.resultview"
+        },
+        {
+            "file": "js/octopart.js",
+            "line": 54,
+            "description": "Percentage value of the new range to apply when re-fetching data",
+            "itemtype": "property",
+            "name": "RANGE_PERCENTAGE",
+            "default": "0.25",
+            "type": "number the percentage value",
+            "class": "Octopart",
+            "module": "octopart"
+        },
+        {
+            "file": "js/octopart.js",
+            "line": 62,
+            "description": "Parse results returned from an octopart query into a filtered/cleaner data object.",
+            "itemtype": "method",
+            "name": "parseData",
+            "params": [
+                {
+                    "name": "results",
+                    "description": "the results returned by octopart query",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "a simplified data representation",
+                "type": "Object"
+            },
+            "class": "Octopart",
+            "module": "octopart"
+        },
+        {
+            "file": "js/octopart.js",
+            "line": 149,
+            "description": "Make an octopart request from a raw octopart url (or any url returning a json representation of the data: see demo version in resistor.view.js)\nand returns a promise representation of this request with:\n     resolved: the data were correctly fetched, wether results are empty or not.\n             Passes the data as parsed by parsedData if results are found, nothing otherwise.\n     rejected: a network connexion failed to the server or a bug occured. Passes requirejs error.requireType param.\nif no result hits are returned the first time given the resistor values, it attempts to fetch new data with enlarged filters such as:\n     1- remove tolerance value from the filters - retry\n     2- if 1 not enough, enlarge resistor range values with RANGE_PERCENTAGE - retry\n     3- remove temperature value anyway\nThis is performed in 3 steps as it is the limit of allowed octopart requests per second. We could decide to make more attemps by retrying after\na setTimeout > 1s but filters enhancement from the 2 other requests should be enough.",
+            "itemtype": "method",
+            "name": "fetchRaw",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "the raw octopart url",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "the promise representing the requested url",
+                "type": "Promise"
+            },
+            "class": "Octopart",
+            "module": "octopart"
+        },
+        {
+            "file": "js/octopart.js",
+            "line": 221,
+            "description": "Same as fetchRaw but instead of using a raw url, we use a config params mecanism from which to build the octopart url.\nThe supported params are:\n     resistance: the resistance value",
+            "itemtype": "method",
+            "name": "fetch",
+            "params": [
+                {
+                    "name": "params",
+                    "description": "the config params object with the following supported values:",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "resistance",
+                            "description": "the resistance value",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "tolerance",
+                            "description": "the tolerance value",
+                            "type": "Number"
+                        },
+                        {
+                            "name": "temperature",
+                            "description": "the temperature value band scheme greater than 4-band",
+                            "type": "Number",
+                            "optional": true
+                        },
+                        {
+                            "name": "filter.throughHole",
+                            "description": "the mounting type for basic circuits, should be true for 4-band, false otherwise (or else no results found!)",
+                            "type": "Boolean",
+                            "optional": true
+                        },
+                        {
+                            "name": "filter.terminations",
+                            "description": "the number of terminations of the resistor, e.g. 2 for basic type",
+                            "type": "Number",
+                            "optional": true
+                        },
+                        {
+                            "name": "filter.distributor",
+                            "description": "the name of the distributor whom we want to restrict the search",
+                            "type": "String",
+                            "optional": true
+                        }
+                    ]
+                }
+            ],
+            "return": {
+                "description": "the promise representing the octopart query",
+                "type": "Promise"
+            },
+            "class": "Octopart",
+            "module": "octopart"
+        },
+        {
+            "file": "js/octopart.js",
+            "line": 262,
+            "description": "Build and returns a jquery DOM representation of the parsed data optimised for listview widgets.",
+            "itemtype": "method",
+            "name": "dataToListviews",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "the parsed data",
+                    "type": "Object"
+                },
+                {
+                    "name": "jquery.items:",
+                    "description": "a jquery collection with each item wrapped in <li> tags.",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "jquery.offers:",
+                    "description": "an array whose elements are a jquery collection with each offer in <li> tags.",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "an object with the following properties:",
+                "type": "Object"
+            },
+            "class": "Octopart",
+            "module": "octopart"
+        },
+        {
+            "file": "js/octopart.js",
+            "line": 290,
+            "description": "Display the parsed data with items in the $datapage listview and dynamically bind offers to its corresponding item in the $detailspage before\nswitching page.",
+            "itemtype": "method",
+            "name": "display",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "the parsed data",
+                    "type": "Object"
+                }
+            ],
+            "class": "Octopart",
+            "module": "octopart"
+        },
+        {
+            "file": "js/octopart.js",
+            "line": 317,
+            "description": "Insert raw content in a listview widget",
+            "itemtype": "method",
+            "name": "displayRaw",
+            "params": [
+                {
+                    "name": "$where",
+                    "description": "the jquery page where to find the listview",
+                    "type": "JQuery"
+                },
+                {
+                    "name": "headerText",
+                    "description": "the text to set in the header of the page",
+                    "type": "String"
+                },
+                {
+                    "name": "$content",
+                    "description": "the jquery content to insert in the listview",
+                    "type": "JQuery"
+                }
+            ],
+            "class": "Octopart",
+            "module": "octopart"
         },
         {
             "file": "js/resistor.controller.js",
@@ -768,7 +1148,7 @@
                 {
                     "name": "resistance",
                     "description": "resistance value",
-                    "type": "Integer"
+                    "type": "Number"
                 },
                 {
                     "name": "tolerance",
@@ -874,7 +1254,7 @@
                 {
                     "name": "position",
                     "description": "the band position selected",
-                    "type": "Integer"
+                    "type": "Number"
                 },
                 {
                     "name": "viewUpdatePalette",
@@ -907,7 +1287,7 @@
                 {
                     "name": "position",
                     "description": "the band position to add the color at",
-                    "type": "Integer"
+                    "type": "Number"
                 },
                 {
                     "name": "viewOnComplete",
@@ -935,7 +1315,7 @@
                 {
                     "name": "position",
                     "description": "the position of the band to unset",
-                    "type": "Integer"
+                    "type": "Number"
                 },
                 {
                     "name": "viewOnComplete",
@@ -950,6 +1330,19 @@
                     "optional": true
                 }
             ],
+            "class": "Controller",
+            "module": "resistor.controller"
+        },
+        {
+            "file": "js/resistor.controller.js",
+            "line": 159,
+            "description": "Get the number of bands currently set\nWe can use it in a viewOnComplete to determine the type of band",
+            "itemtype": "method",
+            "name": "getNumberOfBandsSet",
+            "return": {
+                "description": "the number of bands set",
+                "type": "Number"
+            },
             "class": "Controller",
             "module": "resistor.controller"
         },
@@ -1017,7 +1410,7 @@
                 {
                     "name": "position",
                     "description": "the position",
-                    "type": "Integer"
+                    "type": "Number"
                 }
             ],
             "class": "Resistor",
@@ -1032,7 +1425,7 @@
                 {
                     "name": "position",
                     "description": "the position containing the color",
-                    "type": "Integer"
+                    "type": "Number"
                 }
             ],
             "return": {
@@ -1063,7 +1456,7 @@
                 {
                     "name": "position",
                     "description": "the position containing the color to unset",
-                    "type": "Integer"
+                    "type": "Number"
                 }
             ],
             "class": "Resistor",
@@ -1088,7 +1481,7 @@
                 {
                     "name": "position",
                     "description": "the position where we want to add a color",
-                    "type": "Integer"
+                    "type": "Number"
                 }
             ],
             "return": {
@@ -1117,12 +1510,52 @@
             },
             "class": "Resistor",
             "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.view.js",
+            "line": 30,
+            "class": "",
+            "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.view.js",
+            "line": 84,
+            "class": "",
+            "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.view.js",
+            "line": 101,
+            "class": "",
+            "module": "resistor.model"
+        },
+        {
+            "file": "js/resistor.view.js",
+            "line": 114,
+            "class": "",
+            "module": "resistor.model"
         }
     ],
     "warnings": [
         {
             "message": "Missing item type",
             "line": " js/helper.colorset.js:79"
+        },
+        {
+            "message": "Missing item type",
+            "line": " js/resistor.view.js:30"
+        },
+        {
+            "message": "Missing item type",
+            "line": " js/resistor.view.js:84"
+        },
+        {
+            "message": "Missing item type",
+            "line": " js/resistor.view.js:101"
+        },
+        {
+            "message": "Missing item type",
+            "line": " js/resistor.view.js:114"
         }
     ]
 }

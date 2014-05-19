@@ -51,6 +51,12 @@
             
                 <li><a href="../classes/Controller.html">Controller</a></li>
             
+                <li><a href="../classes/Draggable.html">Draggable</a></li>
+            
+                <li><a href="../classes/LoadingView.html">LoadingView</a></li>
+            
+                <li><a href="../classes/Octopart.html">Octopart</a></li>
+            
                 <li><a href="../classes/Resistor.html">Resistor</a></li>
             
                 <li><a href="../classes/ResultView.html">ResultView</a></li>
@@ -65,7 +71,13 @@
             
                 <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
             
+                <li><a href="../modules/helper.draggable.html">helper.draggable</a></li>
+            
+                <li><a href="../modules/helper.loadingView.html">helper.loadingView</a></li>
+            
                 <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/octopart.html">octopart</a></li>
             
                 <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
             
@@ -133,6 +145,8 @@ define([&quot;jquery&quot;, &quot;draggabilly&quot;, &quot;pubsub&quot;], functi
             var draggabilly = new Draggabilly($this[0], {
                     axis: &#x27;y&#x27; // only drag along y axis
                 });
+
+            draggabilly.disable(); // init disabled
 
             /**
              * Set a color to the band

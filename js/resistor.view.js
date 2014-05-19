@@ -64,12 +64,6 @@ define(["jquery", "pubsub", "helper.colorset", "helper.bandsview", "helper.resul
                 // octopart.js was coded as if it was an api. This callback is the only part of the code to change in the whole app
                 // to switch from a demo version to a "normal" version which whould typically display an error message on $btnFind "click/tap"
                 var $popup = $("#popupNoNetwork");
-                $popup.popup({
-                    positionTo: "window",
-                    overlayTheme: 'b',
-                    theme: 'b',
-                    dismissible: false
-                });
                 $.mobile.pageContainer.one("pagecontainerbeforeshow", function () {
                     $popup.popup("open");
                 });
@@ -98,19 +92,23 @@ define(["jquery", "pubsub", "helper.colorset", "helper.bandsview", "helper.resul
         });
         bandsView.getBand(0).$it.tap(); // init click on first band
 
-        /** init colors **/
+        /** init colors tap events **/
         $colors.on("tap", function () {
             var band;
             if (!$(this).hasClass("disabled")) {
                 band = bandsView.getFocused();
                 band.set($(this));
                 Draggable.wrap(band);
+                resultView.hide(); // hide results all the time even if completeness might be triggered, it does not matter, this is controller's role!
                 bandsView.getNext(band).$it.tap();
                 controller.setBandColor(colors[$(this).data("color")], band.index());
             }
         });
 
-        /** init Find button **/
+        /** init Find button tap events **/
+        $btnFind.button({
+            disabled: true
+        });
         $btnFind.on("tap", function () {
             // do the page transition only if data are ready, otherwise, show a loading widget
             loadingView.on(octopartPromise).done(function () {
@@ -119,6 +117,6 @@ define(["jquery", "pubsub", "helper.colorset", "helper.bandsview", "helper.resul
                 // see also nice jqm events reference: http://jqmtricks.wordpress.com/2014/03/26/jquery-mobile-page-events/
                 $.mobile.pageContainer.pagecontainer("change", $datapage);
             });
-        });
+        })
     };
 });

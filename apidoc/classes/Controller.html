@@ -51,6 +51,12 @@
             
                 <li><a href="../classes/Controller.html">Controller</a></li>
             
+                <li><a href="../classes/Draggable.html">Draggable</a></li>
+            
+                <li><a href="../classes/LoadingView.html">LoadingView</a></li>
+            
+                <li><a href="../classes/Octopart.html">Octopart</a></li>
+            
                 <li><a href="../classes/Resistor.html">Resistor</a></li>
             
                 <li><a href="../classes/ResultView.html">ResultView</a></li>
@@ -65,7 +71,13 @@
             
                 <li><a href="../modules/helper.colorset.html">helper.colorset</a></li>
             
+                <li><a href="../modules/helper.draggable.html">helper.draggable</a></li>
+            
+                <li><a href="../modules/helper.loadingView.html">helper.loadingView</a></li>
+            
                 <li><a href="../modules/helper.resultview.html">helper.resultview</a></li>
+            
+                <li><a href="../modules/octopart.html">octopart</a></li>
             
                 <li><a href="../modules/resistor.controller.html">resistor.controller</a></li>
             
@@ -255,6 +267,13 @@ It subscribes to the EVENT_COMPLETE event.</p>
                     <ul class="index-list methods">
                         
                             <li class="index-item method">
+                                <a href="#method_getNumberOfBandsSet">getNumberOfBandsSet</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method">
                                 <a href="#method_selectColor">selectColor</a>
 
                                 
@@ -332,6 +351,80 @@ It subscribes to the EVENT_COMPLETE event.</p>
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_getNumberOfBandsSet" class="method item">
+    <h3 class="name"><code>getNumberOfBandsSet</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type">Number</span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/js_resistor.controller.js.html#l159"><code>js&#x2F;resistor.controller.js:159</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Get the number of bands currently set
+We can use it in a viewOnComplete to determine the type of band</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type">Number</span>:
+                    
+                    <p>the number of bands set</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
 
                 
                     <div id="method_selectColor" class="method item">
@@ -547,7 +640,7 @@ It subscribes to the EVENT_COMPLETE event.</p>
                 <li class="param">
                     
                         <code class="param-name">position</code>
-                        <span class="type">Integer</span>
+                        <span class="type">Number</span>
                     
 
                     
@@ -704,7 +797,7 @@ It subscribes to the EVENT_COMPLETE event.</p>
                 <li class="param">
                     
                         <code class="param-name">position</code>
-                        <span class="type">Integer</span>
+                        <span class="type">Number</span>
                     
 
                     
@@ -839,7 +932,7 @@ It subscribes to the EVENT_COMPLETE event.</p>
                 <li class="param">
                     
                         <code class="param-name">position</code>
-                        <span class="type">Integer</span>
+                        <span class="type">Number</span>
                     
 
                     
@@ -956,7 +1049,7 @@ Should be redefined directly in the view. Keep it public for testing purposes.</
             <li class="param">
                 
                     <code class="param-name">resistance</code>
-                    <span class="type">Integer</span>
+                    <span class="type">Number</span>
                 
 
                 <div class="param-description">
