@@ -135,7 +135,6 @@ define(["jquery", "pubsub", "exception", "helper.automaton", "helper.colorset"],
             // returns the float value of the resistor's tolerance
             // no resistor complete check
             getTolerance = function () {
-                console.log("bands getting tolerance vaut: " + JSON.stringify(bands));
                 return automaton.isSchemeBand5() ? matchToleranceValue(bands[4]) : matchToleranceValue(bands[3]);
             },
 
@@ -145,6 +144,7 @@ define(["jquery", "pubsub", "exception", "helper.automaton", "helper.colorset"],
                 return matchTemperatureValue(bands[5]);
             },
 
+            // determines if the resistor is in a valid complete state
             isResistorComplete = function () {
                 var indexOfnull = bands.indexOf(null);
                 return (indexOfnull === -1 || indexOfnull > 3) && // range 1-4 set consecutively
@@ -238,7 +238,7 @@ define(["jquery", "pubsub", "exception", "helper.automaton", "helper.colorset"],
             }
             var color = bands[position - 1];
             if (color) {
-                automaton.backtrack(color, position);
+                automaton.backtrack(color, position, bands);
                 bands[position - 1] = null;
                 if (isResistorComplete()) {
                     publishCompleteEvent();

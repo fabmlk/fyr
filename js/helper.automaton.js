@@ -127,14 +127,16 @@ define(["jquery", "helper.colorset"], function ($, ColorSet) {
          * @param {Color} color the color
          * @param {Number} position the position
          */
-        this.backtrack = function (color, position) {
-            var bool;
+        this.backtrack = function (color, position, context) {
             if (state !== STATE_ANY_SCHEME) {
                 // if the color and position is deterministic of a transition, then reversing it takes back to any scheme
-                bool = STATE_BAND_4 && isInSet.call(band4TransitionSet, color, position);
-                bool = bool || (state === STATE_BAND_5 && isInSet.call(band5TransitionSet, color, position));
-                if (bool) {
+                if (STATE_BAND_4 && isInSet.call(band4TransitionSet, color, position)) {
                     state = STATE_ANY_SCHEME;
+                } else if (state === STATE_BAND_5 && isInSet.call(band5TransitionSet, color, position)) {
+                    // band 6 is unset and we remove band 5 or band 5 is unset and we remove band 6
+                    if ((context[5] === null && position === 5) || (context[4] === null && position === 6)) {
+                        state = STATE_ANY_SCHEME;
+                    } // else stay in STATE_BAND_5
                 }
             }
         };
